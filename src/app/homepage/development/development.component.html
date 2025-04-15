@@ -1,0 +1,70 @@
+<div class="development-container d-none d-lg-block">
+  <p class="title">
+    <span class="title-blue"> The Development process</span>
+    that we go through with the client
+  </p>
+  <div class="d-flex">
+    <div *ngFor="let step of steps; let i = index" class="container">
+      <div
+        (mouseleave)="isCollapsed[i] = true"
+        (mouseenter)="isCollapsed[i] = false"
+        [attr.aria-expanded]="!isCollapsed[i]"
+        aria-controls="collapseExample"
+        class="collapse-container d-flex flex-column justify-content-between"
+      >
+        <h1 class="number">{{ step.number }}</h1>
+        <p class="step-title">{{ step.title }}</p>
+      </div>
+
+      <div style="min-height: 150px">
+        <div
+          (mouseleave)="isCollapsed[i] = true"
+          (mouseenter)="isCollapsed[i] = false"
+          #collapse="ngbCollapse"
+          [(ngbCollapse)]="isCollapsed[i]"
+          [horizontal]="true"
+          style="max-width: 300px"
+        >
+          <div class="card" style="width: 300px">
+            <div class="card-body">
+              {{ step.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="development-container d-lg-none">
+  <div class="title">
+    <p class="title-blue m-0">The Development process</p>
+    that we go through with the client
+  </div>
+  <div class="d-flex flex-column">
+    <div *ngFor="let step of steps; let i = index" class="container">
+      <div
+        (click)="isCollapsed[i] = !isCollapsed[i]"
+        [attr.aria-expanded]="!isCollapsed[i]"
+        aria-controls="collapseExample"
+        class="collapse-container d-flex flex-column justify-content-between"
+      >
+        <h1 class="number">{{ step.number }}</h1>
+        <p class="step-title">{{ step.title }}</p>
+      </div>
+
+      <div>
+        <div
+          #collapse="ngbCollapse"
+          [(ngbCollapse)]="isCollapsed[i]"
+          style="max-width: 100%"
+        >
+          <div class="card">
+            <div class="card-body">
+              {{ step.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

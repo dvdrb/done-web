@@ -1,0 +1,127 @@
+.challenges-container {
+  background-color: #1a1a1a;
+  border-top: 0.5px solid #ffffff;
+  border-bottom: 0.5px solid #ffffff;
+  padding: 52px 90px;
+  gap: 10px;
+  display: flex;
+}
+
+.challenges-title-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 180px;
+}
+.title-blue {
+  color: #1268b3;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.card-body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.card {
+  background-color: #1a1a1a;
+  height: 150px;
+  border: none;
+  color: #fff;
+}
+.number {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+.step-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.collapse-container {
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  border-left: 1px solid #1268b3;
+  padding-left: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1100px) {
+  .challenges-container {
+    padding: 52px 20px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .collapse-container {
+    color: #fff;
+    width: 150px;
+    height: 150px;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #1268b3;
+    padding-top: 20px;
+    margin-right: 50px;
+    margin-bottom: 35px;
+  }
+  .number {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+    letter-spacing: -1%;
+    align-self: flex-start;
+  }
+  .title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 50px;
+    justify-self: center;
+    width: 200px;
+  }
+  .card {
+    width: 210px;
+    height: auto;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .step-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    align-self: flex-start;
+  }
+  .card-body {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}

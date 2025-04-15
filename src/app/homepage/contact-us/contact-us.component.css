@@ -1,0 +1,244 @@
+.contact-container {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 2rem;
+  height: 550px;
+}
+.contact-form {
+  border-right: 0.5px solid #fff;
+  max-width: 640px;
+  width: 100%;
+  padding-right: 2rem;
+}
+.heading {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  font-family: "IBM Plex Sans", sans-serif;
+  letter-spacing: -1%;
+  color: #f4f4f4;
+}
+.sub-heading {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: "Space Grotesk", sans-serif;
+  color: #d9d9d9;
+  text-align: center;
+  max-width: 80%;
+}
+.col-md-6 {
+  width: 50% !important;
+}
+
+/* Override Material styles */
+::ng-deep .mat-mdc-text-field-wrapper {
+  background-color: transparent !important;
+  height: 50px !important;
+}
+
+::ng-deep .mat-mdc-form-field-flex {
+  background-color: transparent !important;
+  height: 50px !important;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-mdc-form-field .mdc-line-ripple {
+  background-color: #fff;
+}
+
+::ng-deep
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-line-ripple::after {
+  border-bottom-color: #fff;
+}
+
+::ng-deep .mat-mdc-form-field-focus-overlay {
+  background-color: transparent;
+}
+
+::ng-deep .mdc-text-field {
+  padding: 0 !important;
+  height: 50px !important;
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+  padding: 12px 0 !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep .mat-mdc-input-element {
+  height: 50px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #fff !important;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Placeholder color */
+::ng-deep
+  .mdc-text-field:not(.mdc-text-field--disabled)
+  .mdc-text-field__input::placeholder {
+  color: #6e707f !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Remove default Material background color */
+::ng-deep .mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+form {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.privacy-notice {
+  color: #d9d9d9;
+  font-size: 13px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.privacy-link {
+  color: #d9d9d9;
+  text-decoration: underline;
+  font-size: 13px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.privacy-link:hover {
+  color: #007bff;
+}
+
+.office-card {
+  background-color: #f4f4f4;
+  padding: 52px 24px;
+  border-radius: 1rem;
+  height: fit-content;
+  gap: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.office-heading {
+  color: #121212;
+
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.flag {
+  width: 40px;
+  height: 30px;
+}
+
+.country {
+  font-weight: 600;
+  font-size: 14px;
+  color: #121212;
+  line-height: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+}
+
+.address-info {
+  color: #6e707f;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.address-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.address-info a:hover {
+  color: #007bff;
+}
+
+button {
+  background-color: #1268b3 !important;
+  color: white !important;
+  padding: 8px 12px !important;
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 16px !important;
+  width: 175px !important;
+  height: 50px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .office-card {
+    margin: 1rem 0;
+  }
+  .col-md-6 {
+    width: 100% !important;
+  }
+}
+.office-container {
+  padding: 52px 50px;
+  background-color: #1a1a1a;
+}
+.disabled {
+  background-color: #6e707f !important;
+  cursor: not-allowed;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    height: auto;
+  }
+  .form-actions {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .row {
+    --bs-gutter-x: 0;
+  }
+  .office-container {
+    padding: 25px 25px;
+  }
+}

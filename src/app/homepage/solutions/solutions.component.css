@@ -1,0 +1,102 @@
+.solutions-container {
+  background-color: #1a1a1a;
+  border: none;
+  padding: 52px 90px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #1268b3;
+  margin-bottom: 0;
+}
+.subtitle {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -1%;
+  color: #ffffff;
+}
+.gap-2 {
+  gap: 12px;
+}
+.card {
+  border: none;
+  background-color: #1a1a1a;
+  gap: 32px;
+}
+.card-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #1268b3;
+}
+.card-content {
+  border-left: 1px solid #ffffff;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.card-subtitle {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ffffff;
+}
+.card-description {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #1268b3;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -1%;
+    color: #ffffff;
+  }
+  .card-subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+  }
+  .card-description {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #ffffff;
+  }
+  .solutions-container {
+    background-color: #1a1a1a;
+    border: none;
+    padding: 52px 50px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}

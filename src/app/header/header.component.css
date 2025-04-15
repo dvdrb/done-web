@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 88px;
+  background-color: #242425;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  @media (max-width: 992px) {
+    background-color: #1a1a1a;
+    padding: 12px 20px;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo img {
+  width: 210px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.menu-item {
+  color: #f3f4f5;
+  text-decoration: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: #1268b3;
+}
+
+.menu-item.active {
+  color: #1268b3;
+}
+
+.button-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1268b3;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  @media (max-width: 868px) {
+    justify-self: center;
+    margin-top: 30px;
+  }
+}
+.btn-close {
+  background-color: #f3f4f5;
+}
+
+.button-primary:hover {
+  background-color: #0d4f8c;
+}
+
+.material-icons-outlined {
+  font-size: 20px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.offcanvas-header {
+  border-bottom: 1px solid #242425;
+  padding-bottom: 16px;
+  color: #f3f4f5;
+}
+.offcanvas.show ::ng-deep .offcanvas-body {
+  background-color: #1a1a1a;
+}

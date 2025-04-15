@@ -1,0 +1,112 @@
+.cookies-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Space Grotesk", sans-serif;
+  color: #c7ccd1;
+  line-height: 1.6;
+  padding-top: 100px;
+}
+
+.last-updated {
+  color: #c7ccd1;
+
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h3 {
+  color: #c7ccd1;
+
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.cookie-type {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+}
+
+.examples {
+  color: #c7ccd1;
+
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #c7ccd1;
+}
+
+.browsers li {
+  color: #0066cc;
+}
+
+.contact-info {
+  color: #c7ccd1;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.contact-info a {
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: #c7ccd1;
+}
+.contact-info a:hover {
+  color: #0066cc;
+  text-decoration: underline;
+}
+.contact-info a:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .cookies-container {
+    padding: 100px 24px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}

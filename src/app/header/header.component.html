@@ -1,0 +1,93 @@
+<div class="header d-none d-lg-flex">
+  <div class="logo">
+    <img
+      src="/dwd-logo.png"
+      width="210"
+      height="50"
+      alt="logo"
+      [routerLink]="['/']"
+      class="cursor-pointer"
+    />
+  </div>
+  <div class="menu">
+    <a [routerLink]="['/about-us']" class="menu-item" routerLinkActive="active">
+      About Us
+    </a>
+    <a
+      class="menu-item"
+      [routerLink]="['/']"
+      [fragment]="'development-process'"
+      (click)="scrollToElement('development-process')"
+    >
+      Process
+    </a>
+    <a class="menu-item" [routerLink]="['/faqs']"> FAQs </a>
+  </div>
+
+  <button
+    class="button-primary"
+    [routerLink]="['/']"
+    [fragment]="'contact-us'"
+    (click)="scrollToElement('contact-us')"
+  >
+    <span class="material-icons-outlined">call</span>
+    Book a call
+  </button>
+</div>
+
+<div class="d-flex d-flex d-lg-none header">
+  <div class="logo">
+    <img
+      src="/dwd-logo.png"
+      width="210"
+      height="50"
+      alt="logo"
+      [routerLink]="['/']"
+      class="cursor-pointer"
+    />
+  </div>
+  <a class="btn btn-lg btn-outline-primary" (click)="openEnd(content)">
+    <span class="material-icons-outlined">menu</span>
+  </a>
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title">Quick Links</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="offcanvas.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="menu flex-column d-flex gap-2 align-items-center">
+        <a
+          [routerLink]="['/about-us']"
+          class="menu-item"
+          routerLinkActive="active"
+        >
+          About Us
+        </a>
+        <a
+          class="menu-item"
+          [routerLink]="['/']"
+          [fragment]="'development-process'"
+          (click)="scrollToElement('development-process')"
+        >
+          Process
+        </a>
+        <a class="menu-item" [routerLink]="['/faqs']"> FAQs </a>
+      </div>
+
+      <button
+        class="button-primary"
+        [routerLink]="['/']"
+        [fragment]="'contact-us'"
+        (click)="scrollToElement('contact-us')"
+      >
+        <span class="material-icons-outlined">call</span>
+        Book a call
+      </button>
+    </div>
+  </ng-template>
+</div>

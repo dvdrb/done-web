@@ -1,0 +1,58 @@
+.faqs-container {
+  background-color: #1a1a1a;
+  padding: 90px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: white;
+}
+
+.subtitle {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: #e5e5e5;
+  font-weight: 300;
+  color: white;
+}
+.title-container {
+  max-width: 624px;
+}
+.question {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  font-weight: 700;
+}
+.answer {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: #c7ccd1;
+
+  font-weight: 400;
+}
+.contact-nr {
+  color: #c7ccd1;
+  text-decoration: none;
+}
+
+.contact-nr:hover {
+  color: #1268b3;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .faqs-container {
+    padding: 40px;
+    margin-top: 48px;
+  }
+}

@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: #1a1a1a;
+}
+
+.space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.ibm-plex-sans {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* If you have a fixed header, add padding to sections */
+section[id] {
+  scroll-margin-top: 70px; /* Adjust this value based on your header height */
+}
+.offcanvas {
+  width: 300px !important;
+  border-radius: 4px !important;
+  background-color: #1a1a1a !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
