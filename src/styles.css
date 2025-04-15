@@ -28,7 +28,7 @@ section[id] {
   scroll-margin-top: 70px; /* Adjust this value based on your header height */
 }
 .offcanvas {
-  width: 300px !important;
+  width: 100% !important;
   border-radius: 4px !important;
   background-color: #1a1a1a !important;
 }

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
+import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +23,16 @@ import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 export class HeaderComponent {
   constructor(private router: Router) {}
   private offcanvasService = inject(NgbOffcanvas);
+
+  routerAndClose(routeer: string, offcanvas: NgbOffcanvasRef): void {
+    offcanvas.dismiss('Navigation click');
+    this.router.navigate([routeer]);
+  }
+  navigateAndClose(elementId: string, offcanvasRef: NgbOffcanvasRef): void {
+    offcanvasRef.dismiss('Navigation click');
+    this.scrollToElement(elementId);
+  }
+
   openEnd(content: TemplateRef<any>) {
     this.offcanvasService.open(content, { position: 'top' });
   }

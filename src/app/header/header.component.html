@@ -62,7 +62,8 @@
     <div class="offcanvas-body">
       <div class="menu flex-column d-flex gap-2 align-items-center">
         <a
-          [routerLink]="['/about-us']"
+          (click)="routerAndClose('/about-us', offcanvas)"
+          [routerLink]="['/faqs']"
           class="menu-item"
           routerLinkActive="active"
         >
@@ -72,18 +73,24 @@
           class="menu-item"
           [routerLink]="['/']"
           [fragment]="'development-process'"
-          (click)="scrollToElement('development-process')"
+          (click)="navigateAndClose('development-process', offcanvas)"
         >
           Process
         </a>
-        <a class="menu-item" [routerLink]="['/faqs']"> FAQs </a>
+        <a
+          class="menu-item"
+          (click)="routerAndClose('/faqs', offcanvas)"
+          [routerLink]="['/faqs']"
+        >
+          FAQs
+        </a>
       </div>
 
       <button
         class="button-primary"
         [routerLink]="['/']"
         [fragment]="'contact-us'"
-        (click)="scrollToElement('contact-us')"
+        (click)="navigateAndClose('contact-us', offcanvas)"
       >
         <span class="material-icons-outlined">call</span>
         Book a call
