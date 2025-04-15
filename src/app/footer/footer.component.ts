@@ -20,7 +20,11 @@ export class FooterComponent {
       setTimeout(() => {
         const element = document.getElementById(elementId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const isMobile = window.innerWidth < 768; // Bootstrap's lg breakpoint
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: isMobile ? 'start' : 'center',
+          });
         }
       }, 100);
     });
