@@ -4,6 +4,8 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
+import { AngularAppEngine, createRequestHandler } from '@angular/ssr';
+import { getContext } from '@netlify/angular-runtime/context.mjs';
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -34,7 +36,7 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
-  }),
+  })
 );
 
 /**
@@ -44,7 +46,7 @@ app.use('/**', (req, res, next) => {
   angularApp
     .handle(req)
     .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
+      response ? writeResponseToNodeResponse(response, res) : next()
     )
     .catch(next);
 });
@@ -59,8 +61,25 @@ if (isMainModule(import.meta.url)) {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
+const angularAppEngine = new AngularAppEngine();
+
+export async function netlifyAppEngineHandler(
+  request: Request
+): Promise<Response> {
+  const context = getContext();
+
+  // Example API endpoints can be defined here.
+  // Uncomment and define endpoints as necessary.
+  // const pathname = new URL(request.url).pathname;
+  // if (pathname === '/api/hello') {
+  //   return Response.json({ message: 'Hello from the API' });
+  // }
+
+  const result = await angularAppEngine.handle(request, context);
+  return result || new Response('Not found', { status: 404 });
+}
 
 /**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
+ * The request handler used by the Angular CLI (dev-server and during build).
  */
-export const reqHandler = createNodeRequestHandler(app);
+export const reqHandler = createRequestHandler(netlifyAppEngineHandler);
