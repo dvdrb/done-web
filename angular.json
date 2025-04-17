@@ -19,7 +19,7 @@
             "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/_redirects",
+              "_redirects",
               {
                 "glob": "**/*",
                 "input": "public"
