@@ -1,28 +1,30 @@
 <div>
-  <div class="home-container d-none d-lg-block">
-    <div class="logo">
-      <img src="/dwd-logo-2.png" alt="DWD Logo" />
-    </div>
-    <div class="hero-text">
-      <p class="title">The path to your success,</p>
-      <p class="with-us title">With us.</p>
-      <div class="d-flex justify-content-between">
-        <p class="description">
-          Done Web Design -
-          <span>
-            We build websites that get results. Fast, modern, and made to grow
-            your Brand.</span
+  <div class="d-flex justify-content-center">
+    <div class="home-container d-none d-lg-block">
+      <div class="logo">
+        <img src="/dwd-logo-2.png" alt="DWD Logo" />
+      </div>
+      <div class="hero-text">
+        <p class="title">The path to your success,</p>
+        <p class="with-us title">With us.</p>
+        <div class="d-flex justify-content-between">
+          <p class="description">
+            Done Web Design -
+            <span>
+              We build websites that get results. Fast, modern, and made to grow
+              your Brand.</span
+            >
+          </p>
+          <button
+            class="book-call-btn d-flex justify-content-center align-items-center"
+            [routerLink]="['/']"
+            [fragment]="'contact-us'"
+            (click)="scrollToElement('contact-us')"
           >
-        </p>
-        <button
-          class="book-call-btn d-flex justify-content-center align-items-center"
-          [routerLink]="['/']"
-          [fragment]="'contact-us'"
-          (click)="scrollToElement('contact-us')"
-        >
-          <span class="material-icons-outlined"> call </span>
-          Book a call
-        </button>
+            <span class="material-icons-outlined"> call </span>
+            Book a call
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -51,15 +53,15 @@
     </div>
   </div>
   <section id="development-process">
-    <app-development />
+    <app-development class="section" />
   </section>
   <section id="industries">
-    <app-solutions />
+    <app-solutions class="section" />
   </section>
   <section id="top-challenges">
-    <app-challanges />
+    <app-challanges class="section" />
   </section>
   <section id="contact-us">
-    <app-contact-us />
+    <app-contact-us class="section" />
   </section>
 </div>

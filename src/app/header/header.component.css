@@ -1,10 +1,34 @@
 .header {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 88px;
+  background-color: #242425;
+  position: fixed;
+  justify-self: center;
+  width: -webkit-fill-available;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  @media (max-width: 992px) {
+    background-color: #1a1a1a;
+    padding: 12px 20px;
+  }
+}
+.contain {
+  max-width: 1200px;
+  width: -webkit-fill-available;
+}
+.header-mobile {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 88px;
   background-color: #242425;
   position: fixed;
+  justify-self: center;
+  width: -webkit-fill-available;
   top: 0;
   left: 0;
   right: 0;
@@ -92,4 +116,8 @@
 }
 .offcanvas.show ::ng-deep .offcanvas-body {
   background-color: #1a1a1a;
+}
+.something {
+  height: 74px;
+  background-color: #242425;
 }

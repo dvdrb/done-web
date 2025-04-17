@@ -3,6 +3,8 @@
   color: #fff;
   padding: 2rem;
   height: 550px;
+  max-width: 1300px;
+  width: -webkit-fill-available;
 }
 .contact-form {
   border-right: 0.5px solid #fff;

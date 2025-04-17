@@ -5,6 +5,8 @@
   gap: 10px;
   display: flex;
   flex-direction: column;
+  max-width: 1300px;
+  width: -webkit-fill-available;
 }
 .title {
   font-family: "Space Grotesk", sans-serif;

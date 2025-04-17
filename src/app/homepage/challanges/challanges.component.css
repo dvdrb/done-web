@@ -5,6 +5,8 @@
   padding: 52px 90px;
   gap: 10px;
   display: flex;
+  max-width: 1300px;
+  width: -webkit-fill-available;
 }
 
 .challenges-title-text {
