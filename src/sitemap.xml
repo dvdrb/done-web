@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://donewebdesigns.com/about-us</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://donewebdesigns.com/#development-process</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://donewebdesigns.com/faqs</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://donewebdesigns.com/#contact-us</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://donewebdesigns.com/#top-challenges</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://donewebdesigns.com/#industries</loc>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
