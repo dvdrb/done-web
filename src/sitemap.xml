@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <url>
-    <loc>https://donewebdesigns.com/about-us</loc>
-    <priority>0.8</priority>
-  </url>
 
-  <url>
-    <loc>https://donewebdesigns.com/#development-process</loc>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://donewebdesigns.com/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://donewebdesigns.com/about-us/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://donewebdesigns.com/faqs/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://donewebdesigns.com/cookies/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://donewebdesigns.com/terms/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
-  <url>
-    <loc>https://donewebdesigns.com/faqs</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://donewebdesigns.com/#contact-us</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://donewebdesigns.com/#top-challenges</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://donewebdesigns.com/#industries</loc>
-    <priority>0.6</priority>
-  </url>
 
 </urlset>
