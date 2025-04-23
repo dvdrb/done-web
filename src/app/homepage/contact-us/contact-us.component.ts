@@ -6,12 +6,13 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-contact-us',
   standalone: true,
@@ -21,6 +22,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    TranslatePipe,
   ],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css',

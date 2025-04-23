@@ -5,6 +5,7 @@
   height: 550px;
   max-width: 1300px;
   width: -webkit-fill-available;
+  justify-self: center;
 }
 .contact-form {
   border-right: 0.5px solid #fff;
@@ -144,7 +145,7 @@ form {
 .office-heading {
   color: #121212;
 
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 48px;
   text-align: center;

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { afterNextRender, ChangeDetectorRef, Component } from '@angular/core';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { filter } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,12 @@ import { filter } from 'rxjs/operators';
 export class AppComponent {
   title = 'DWD-website';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private translate: TranslateService) {
+    afterNextRender(() => {
+      this.translate.setDefaultLang('en');
+      this.translate.use(localStorage.getItem('lang') || 'en');
+    });
+
     // Subscribe to router events to reset scroll position
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))

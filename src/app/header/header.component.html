@@ -16,7 +16,7 @@
         class="menu-item"
         routerLinkActive="active"
       >
-        About Us
+        {{ "n5" | translate }}
       </a>
       <a
         class="menu-item"
@@ -24,9 +24,9 @@
         [fragment]="'development-process'"
         (click)="scrollToElement('development-process')"
       >
-        Process
+        {{ "n6" | translate }}
       </a>
-      <a class="menu-item" [routerLink]="['/faqs']"> FAQs </a>
+      <a class="menu-item" [routerLink]="['/faqs']">{{ "n7" | translate }}</a>
     </div>
 
     <button
@@ -36,7 +36,7 @@
       (click)="scrollToElement('contact-us')"
     >
       <span class="material-icons-outlined">call</span>
-      Book a call
+      {{ "n4" | translate }}
     </button>
   </div>
 </div>
@@ -57,7 +57,7 @@
   </a>
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
-      <h4 class="offcanvas-title">Quick Links</h4>
+      <h4 class="offcanvas-title">{{ "n46" | translate }}</h4>
       <button
         type="button"
         class="btn-close"
@@ -73,7 +73,7 @@
           class="menu-item"
           routerLinkActive="active"
         >
-          About Us
+          {{ "n5" | translate }}
         </a>
         <a
           class="menu-item"
@@ -81,14 +81,14 @@
           [fragment]="'development-process'"
           (click)="navigateAndClose('development-process', offcanvas)"
         >
-          Process
+          {{ "n6" | translate }}
         </a>
         <a
           class="menu-item"
           (click)="routerAndClose('/faqs', offcanvas)"
           [routerLink]="['/faqs']"
         >
-          FAQs
+          {{ "n7" | translate }}
         </a>
       </div>
 
@@ -99,7 +99,7 @@
         (click)="navigateAndClose('contact-us', offcanvas)"
       >
         <span class="material-icons-outlined">call</span>
-        Book a call
+        {{ "n4" | translate }}
       </button>
     </div>
   </ng-template>

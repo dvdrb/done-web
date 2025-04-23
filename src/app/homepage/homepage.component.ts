@@ -6,6 +6,7 @@ import { DevelopmentComponent } from './development/development.component';
 import { SolutionsComponent } from './solutions/solutions.component';
 import { ChallangesComponent } from './challanges/challanges.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-homepage',
@@ -17,6 +18,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     SolutionsComponent,
     ChallangesComponent,
     ContactUsComponent,
+    TranslatePipe,
   ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css',

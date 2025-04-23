@@ -5,15 +5,12 @@
         <img src="/dwd-logo-2.png" alt="DWD Logo" />
       </div>
       <div class="hero-text">
-        <p class="title">The path to your success,</p>
-        <p class="with-us title">With us.</p>
+        <p class="title">{{ "n1" | translate }}</p>
+        <p class="with-us title">{{ "n2" | translate }}</p>
         <div class="d-flex justify-content-between">
           <p class="description">
             Done Web Design -
-            <span>
-              We build websites that get results. Fast, modern, and made to grow
-              your Brand.</span
-            >
+            <span> {{ "n3" | translate }}</span>
           </p>
           <button
             class="book-call-btn d-flex justify-content-center align-items-center"
@@ -22,7 +19,7 @@
             (click)="scrollToElement('contact-us')"
           >
             <span class="material-icons-outlined"> call </span>
-            Book a call
+            {{ "n4" | translate }}
           </button>
         </div>
       </div>
@@ -30,15 +27,12 @@
   </div>
   <div class="home-container d-flex d-lg-none">
     <div class="hero-text">
-      <p class="title">The path to your success,</p>
-      <p class="with-us title">With us.</p>
+      <p class="title">{{ "n1" | translate }}</p>
+      <p class="with-us title">{{ "n2" | translate }}</p>
       <div class="">
         <p class="description">
           Done Web Design -
-          <span>
-            We build websites that get results. Fast, modern, and made to grow
-            your Brand.</span
-          >
+          <span> {{ "n3" | translate }}</span>
         </p>
         <button
           class="book-call-btn d-flex justify-content-center align-items-center"
@@ -47,7 +41,7 @@
           (click)="scrollToElement('contact-us')"
         >
           <span class="material-icons-outlined"> call </span>
-          Book a call
+          {{ "n4" | translate }}
         </button>
       </div>
     </div>

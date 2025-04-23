@@ -1,7 +1,7 @@
 <div class="challenges-container d-none d-lg-flex flex-row">
   <div class="d-flex justify-content-center flex-column">
-    <p class="title-blue">Top challenges</p>
-    <p class="challenges-title-text">we solve</p>
+    <p class="title-blue">{{ "n26" | translate }}</p>
+    <p class="challenges-title-text">{{ "n27" | translate }}</p>
   </div>
   <div *ngFor="let challange of challanges; let i = index" class="container">
     <div
@@ -35,8 +35,8 @@
 </div>
 <div class="challenges-container d-lg-none flex-column">
   <div class="title align-self-center">
-    <p class="title-blue m-0">Top challenges</p>
-    <p class="challenges-title-text">we solve</p>
+    <p class="title-blue m-0">{{ "n26" | translate }}</p>
+    <p class="challenges-title-text">{{ "n27" | translate }}</p>
   </div>
   <div class="d-flex flex-column">
     <div *ngFor="let challange of challanges; let i = index" class="container">

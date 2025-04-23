@@ -3,39 +3,48 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { NgbCollapse, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslatePipe } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-development',
-  imports: [MatCardModule, CommonModule, MatExpansionModule, NgbCollapseModule],
+  imports: [
+    MatCardModule,
+    CommonModule,
+    MatExpansionModule,
+    NgbCollapseModule,
+    TranslatePipe,
+  ],
   templateUrl: './development.component.html',
   styleUrl: './development.component.css',
 })
 export class DevelopmentComponent {
+  constructor(private translate: TranslateService) {}
   isCollapsed: boolean[] = Array(4).fill(true);
 
-  steps = [
-    {
-      number: '01',
-      title: 'Consult your idea',
-      description:
-        'We start by understanding your vision and goals-then help shape them into a clear, actionable plan.',
-    },
-    {
-      number: '02',
-      title: 'Choose',
-      description:
-        'We recommend the most effective technologies based on your needs, scalability, and timeline.',
-    },
-    {
-      number: '03',
-      title: 'Design',
-      description:
-        'From wireframes to UI/UX, we design intuitive, user-focused experiences that stand out.',
-    },
-    {
-      number: '04',
-      title: 'Develop',
-      description:
-        'Our developers bring your product to life with clean code and reliable architecture.',
-    },
-  ];
+  steps: any[] = [];
+
+  ngOnInit(): void {
+    this.steps = [
+      {
+        number: '01',
+        title: this.translate.instant('n10'),
+        description: this.translate.instant('n11'),
+      },
+      {
+        number: '02',
+        title: this.translate.instant('n12'),
+        description: this.translate.instant('n13'),
+      },
+      {
+        number: '03',
+        title: this.translate.instant('n14'),
+        description: this.translate.instant('n15'),
+      },
+      {
+        number: '04',
+        title: this.translate.instant('n16'),
+        description: this.translate.instant('n17'),
+      },
+    ];
+  }
 }
