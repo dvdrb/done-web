@@ -15,22 +15,26 @@ export class ChallangesComponent {
   challanges: { number: string; title: string; description: string }[] = [];
 
   ngOnInit(): void {
-    this.challanges = [
-      {
-        number: '01',
-        title: this.translate.instant('n28'),
-        description: this.translate.instant('n29'),
-      },
-      {
-        number: '02',
-        title: this.translate.instant('n30'),
-        description: this.translate.instant('n31'),
-      },
-      {
-        number: '03',
-        title: this.translate.instant('n32'),
-        description: this.translate.instant('n33'),
-      },
-    ];
+    this.translate
+      .get(['n28', 'n29', 'n30', 'n31', 'n32', 'n33'])
+      .subscribe((translations) => {
+        this.challanges = [
+          {
+            number: '01',
+            title: translations['n28'],
+            description: translations['n29'],
+          },
+          {
+            number: '02',
+            title: translations['n30'],
+            description: translations['n31'],
+          },
+          {
+            number: '03',
+            title: translations['n32'],
+            description: translations['n33'],
+          },
+        ];
+      });
   }
 }

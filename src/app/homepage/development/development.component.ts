@@ -24,27 +24,31 @@ export class DevelopmentComponent {
   steps: any[] = [];
 
   ngOnInit(): void {
-    this.steps = [
-      {
-        number: '01',
-        title: this.translate.instant('n10'),
-        description: this.translate.instant('n11'),
-      },
-      {
-        number: '02',
-        title: this.translate.instant('n12'),
-        description: this.translate.instant('n13'),
-      },
-      {
-        number: '03',
-        title: this.translate.instant('n14'),
-        description: this.translate.instant('n15'),
-      },
-      {
-        number: '04',
-        title: this.translate.instant('n16'),
-        description: this.translate.instant('n17'),
-      },
-    ];
+    this.translate
+      .get(['n10', 'n11', 'n12', 'n13', 'n14', 'n15', 'n16', 'n17'])
+      .subscribe((translations) => {
+        this.steps = [
+          {
+            number: '01',
+            title: translations['n10'],
+            description: translations['n11'],
+          },
+          {
+            number: '02',
+            title: translations['n12'],
+            description: translations['n13'],
+          },
+          {
+            number: '03',
+            title: translations['n14'],
+            description: translations['n15'],
+          },
+          {
+            number: '04',
+            title: translations['n16'],
+            description: translations['n17'],
+          },
+        ];
+      });
   }
 }
