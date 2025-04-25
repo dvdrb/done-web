@@ -119,5 +119,80 @@
   "n118": "Putem actualiza acești Termeni periodic. Orice modificări vor fi publicate pe această pagină, iar continuarea utilizării site-ului presupune acceptarea versiunii actualizate.",
   "n119": "11. Legea aplicabilă",
   "n120": "Acești Termeni sunt guvernați de legislația română. Orice litigii legate de acești Termeni vor fi soluționate de instanțele competente din România.",
-  "n121": "Oficiul nostru"
+  "n121": "Oficiul nostru",
+  "n122": "Politica de Cookies",
+  "n123": "Ultima actualizare: {{ lastUpdated }}",
+
+  "n124": "1. Ce sunt cookie-urile?",
+  "n125": "Cookie-urile sunt fișiere text mici stocate pe dispozitivul dumneavoastră (computer, tabletă, telefon mobil) atunci când vizitați site-ul nostru. Ele permit site-ului să recunoască dispozitivul și să rețină informații despre vizita dumneavoastră, cum ar fi preferințele de limbă, dimensiunea fontului și alte setări de afișare.",
+  "n126": "Cookie-urile sunt utilizate pe scară largă pentru a face site-urile web să funcționeze mai eficient și pentru a oferi informații proprietarilor site-ului. Ele îmbunătățesc experiența utilizatorului și ajută la personalizarea conținutului.",
+
+  "n127": "2. Tipuri de cookie-uri pe care le folosim",
+
+  "n128": "3. Cum folosim cookie-urile",
+  "n129": "Folosim cookie-uri în diverse scopuri, inclusiv:",
+  "n130": "Asigurarea funcționării corecte a site-ului nostru",
+  "n131": "Salvarea preferințelor dumneavoastră și oferirea unei experiențe personalizate",
+  "n132": "Analizarea modului în care este utilizat site-ul nostru pentru a-i îmbunătăți performanța",
+  "n133": "Afișarea reclamelor adaptate intereselor dumneavoastră",
+  "n134": "Facilitarea distribuirii de conținut pe platformele de social media",
+
+  "n135": "4. Cookie-uri ale terților",
+  "n136": "Pe lângă cookie-urile proprii, permitem unor terțe părți să plaseze cookie-uri pe dispozitivul dumneavoastră atunci când vizitați site-ul nostru. Aceste terțe părți includ:",
+  "n137": "Aceste terțe părți pot folosi propriile cookie-uri pentru a colecta informații despre activitatea dumneavoastră online pe diferite site-uri. Vă recomandăm să consultați politicile lor de confidențialitate pentru mai multe informații despre cum utilizează datele dumneavoastră.",
+
+  "n138": "5. Gestionarea cookie-urilor",
+  "n139": "Puteți controla și gestiona cookie-urile în mai multe moduri. Majoritatea browserelor web vă permit să gestionați preferințele privind cookie-urile prin setările lor.",
+  "n140": "Puteți:",
+  "n141": "Rețineți că blocarea sau ștergerea cookie-urilor poate afecta experiența dumneavoastră de navigare, iar unele funcționalități ale site-ului nostru pot deveni indisponibile.",
+  "n142": "Pentru informații despre cum puteți gestiona cookie-urile în browserul dumneavoastră, vă rugăm să consultați paginile de ajutor ale acestuia:",
+
+  "n143": "6. Modificări ale Politicii de Cookies",
+  "n144": "Ne rezervăm dreptul de a actualiza Politica de Cookies în orice moment. Orice modificare va fi publicată pe această pagină, iar data \"Ultima actualizare\" de la începutul paginii va fi modificată corespunzător.",
+  "n145": "Vă încurajăm să consultați periodic această Politică de Cookies pentru a rămâne informat cu privire la modul în care folosim cookie-urile.",
+
+  "n146": "7. Contact",
+  "n147": "Dacă aveți întrebări sau nelămuriri legate de Politica de Cookies sau de practicile noastre, vă rugăm să ne contactați la:",
+  "n148": "Email: {{ contactInfo.email }}",
+  "n149": "Adresă: {{ contactInfo.address }}",
+  "n150": "Telefon: {{ contactInfo.phone }}",
+  "cookieTypes": [
+    {
+      "title": "2.1. Cookie-uri Strict Necesare",
+      "content": "Aceste cookie-uri sunt esențiale pentru funcționarea corectă a site-ului nostru. Ele permit funcționalități de bază, cum ar fi navigarea între pagini și accesul la zonele securizate ale site-ului. Aceste cookie-uri nu colectează informații care ar putea fi utilizate în scopuri de marketing sau pentru a urmări activitățile tale de navigare.",
+      "examples": "Exemple: cookie-uri de sesiune, cookie-uri de autentificare, cookie-uri pentru coșul de cumpărături."
+    },
+    {
+      "title": "2.2. Cookie-uri de Preferințe",
+      "content": "Aceste cookie-uri permit site-ului să îți rețină alegerile (cum ar fi limba preferată sau regiunea în care te afli) și să ofere funcționalități îmbunătățite, mai personalizate.",
+      "examples": "Exemple: cookie-uri pentru preferințele de limbă, cookie-uri pentru dimensiunea fontului."
+    },
+    {
+      "title": "2.3. Cookie-uri Statistice (Analitice)",
+      "content": "Aceste cookie-uri colectează informații despre modul în care vizitatorii folosesc site-ul nostru, cum ar fi paginile cele mai vizitate și eventualele mesaje de eroare întâmpinate. Aceste date ne ajută să îmbunătățim funcționarea site-ului.",
+      "examples": "Exemple: cookie-uri Google Analytics, care ne ajută să înțelegem cum interacționează utilizatorii cu site-ul nostru."
+    },
+    {
+      "title": "2.4. Cookie-uri de Marketing",
+      "content": "Aceste cookie-uri sunt utilizate pentru a urmări vizitatorii pe diferite site-uri web. Scopul este de a afișa reclame relevante și atractive pentru fiecare utilizator.",
+      "examples": "Exemple: cookie-uri pentru reclame personalizate, cookie-uri pentru platforme sociale."
+    }
+  ],
+  "thirdPartyCookies": [
+    "Servicii de analiză (precum Google Analytics) - pentru a înțelege cum interacționează vizitatorii cu site-ul nostru",
+    "Rețele de publicitate - pentru a livra reclame relevante pe alte site-uri",
+    "Platforme de social media (precum Facebook, Twitter) - pentru a permite distribuirea de conținut și interacțiunea cu paginile noastre"
+  ],
+  "managementOptions": [
+    "Ștergerea cookie-urilor existente de pe dispozitiv",
+    "Blocarea plasării de cookie-uri pe dispozitiv",
+    "Configurarea browserului pentru a te notifica înainte de a accepta cookie-uri",
+    "Acceptarea doar a anumitor tipuri de cookie-uri"
+  ],
+  "browsers": ["Google Chrome", "Mozilla Firefox", "Microsoft Edge", "Safari"],
+  "contactInfo": {
+    "email": "contact.office@yahoo.com",
+    "address": "Str. Maria Rosetti nr.30, București, România",
+    "phone": "+40 754 192 036"
+  }
 }

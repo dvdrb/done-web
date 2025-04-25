@@ -1,24 +1,17 @@
 <div class="cookies-container">
-  <div class="cookies-title">Cookies Policy</div>
-  <div class="last-updated">Last updated: {{ lastUpdated }}</div>
+  <div class="cookies-title">{{ "n122" | translate }}</div>
+  <div class="last-updated">
+    {{ "n123" | translate : { lastUpdated: lastUpdated } }}
+  </div>
 
   <section class="section">
-    <h2>1. What are cookies?</h2>
-    <p>
-      Cookies are small text files stored on your device (computer, tablet,
-      mobile phone) when you visit our website. They allow the website to
-      recognize your device and remember information about your visit, such as
-      language preferences, font size, and other display settings.
-    </p>
-    <p>
-      Cookies are widely used to make websites function more efficiently and to
-      provide information to site owners. They enhance user experience and help
-      personalize content.
-    </p>
+    <h2>{{ "n124" | translate }}</h2>
+    <p>{{ "n125" | translate }}</p>
+    <p>{{ "n126" | translate }}</p>
   </section>
 
   <section class="section">
-    <h2>2. Types of cookies we use</h2>
+    <h2>{{ "n127" | translate }}</h2>
     <div class="cookie-type" *ngFor="let type of cookieTypes">
       <h3>{{ type.title }}</h3>
       <p>{{ type.content }}</p>
@@ -27,88 +20,59 @@
   </section>
 
   <section class="section">
-    <h2>3. How we use cookies</h2>
-    <p>We use cookies for various purposes, including:</p>
+    <h2>{{ "n128" | translate }}</h2>
+    <p>{{ "n129" | translate }}</p>
     <ul>
-      <li>Ensuring the proper functionality of our website</li>
-      <li>
-        Saving your preferences and providing you with a personalized experience
-      </li>
-      <li>Analyzing how our website is used to improve its performance</li>
-      <li>Delivering advertisements tailored to your interests</li>
-      <li>Facilitating content sharing on social media platforms</li>
+      <li>{{ "n130" | translate }}</li>
+      <li>{{ "n131" | translate }}</li>
+      <li>{{ "n132" | translate }}</li>
+      <li>{{ "n133" | translate }}</li>
+      <li>{{ "n134" | translate }}</li>
     </ul>
   </section>
 
   <section class="section">
-    <h2>4. Third-party cookies</h2>
-    <p>
-      In addition to our own cookies, we allow certain third parties to place
-      cookies on your device when you visit our site. These third parties
-      include:
-    </p>
+    <h2>{{ "n135" | translate }}</h2>
+    <p>{{ "n136" | translate }}</p>
     <ul>
       <li *ngFor="let cookie of thirdPartyCookies">{{ cookie }}</li>
     </ul>
-    <p>
-      These third parties may use their own cookies to collect information about
-      your online activities across different websites. We recommend reviewing
-      their privacy policies for more information about how they use your data.
-    </p>
+    <p>{{ "n137" | translate }}</p>
   </section>
 
   <section class="section">
-    <h2>5. Managing cookies</h2>
-    <p>
-      You can control and manage cookies in various ways. Most web browsers
-      allow you to manage your cookie preferences through their settings.
-    </p>
-    <p>You can:</p>
+    <h2>{{ "n138" | translate }}</h2>
+    <p>{{ "n139" | translate }}</p>
+    <p>{{ "n140" | translate }}</p>
     <ul>
       <li *ngFor="let option of managementOptions">{{ option }}</li>
     </ul>
-    <p>
-      Please note that blocking or deleting cookies may affect your browsing
-      experience and some features of our website may become unavailable.
-    </p>
-    <p>
-      For information on how to manage cookies in your browser, please refer to
-      the browser's help pages:
-    </p>
+    <p>{{ "n141" | translate }}</p>
+    <p>{{ "n142" | translate }}</p>
     <ul class="browsers">
-      <li *ngFor="let browser of browsers">
-        {{ browser }}
-      </li>
+      <li *ngFor="let browser of browsers">{{ browser }}</li>
     </ul>
   </section>
 
   <section class="section">
-    <h2>6. Changes to the Cookie Policy</h2>
-    <p>
-      We reserve the right to update the Cookie Policy at any time. Any changes
-      will be posted on this page, and the "Last updated" date at the top will
-      be revised accordingly.
-    </p>
-    <p>
-      We encourage you to review this Cookie Policy periodically to stay
-      informed about how we use cookies.
-    </p>
+    <h2>{{ "n143" | translate }}</h2>
+    <p>{{ "n144" | translate }}</p>
+    <p>{{ "n145" | translate }}</p>
   </section>
 
   <section class="section">
-    <h2>7. Contact</h2>
-    <p>
-      If you have any questions or concerns regarding the Cookie Policy or our
-      practices, please contact us at:
-    </p>
+    <h2>{{ "n146" | translate }}</h2>
+    <p>{{ "n147" | translate }}</p>
     <div class="contact-info d-flex flex-column">
-      <a href="email:conludo.office@yahoo.com " target="_blank"
-        >Email: {{ contactInfo.email }}</a
-      >
-      <a>Address: {{ contactInfo.address }}</a>
-      <a href="tel:+40734102096" target="_blank"
-        >Phone: {{ contactInfo.phone }}</a
-      >
+      <a href="mailto:{{ contactInfo.email }}" target="_blank">
+        {{ "n148" | translate : { contactInfo: contactInfo } }}
+      </a>
+      <a>
+        {{ "n149" | translate : { contactInfo: contactInfo } }}
+      </a>
+      <a href="tel:{{ contactInfo.phone }}" target="_blank">
+        {{ "n150" | translate : { contactInfo: contactInfo } }}
+      </a>
     </div>
   </section>
 </div>

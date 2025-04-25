@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -23,8 +24,18 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private translate: TranslateService) {}
   private offcanvasService = inject(NgbOffcanvas);
+
+  lang: string = 'en';
+
+  changeLang(lang: any) {
+    this.lang = lang;
+    const selectedLanguage = lang;
+    console.log(selectedLanguage);
+    localStorage.setItem('lang', selectedLanguage);
+    this.translate.use(selectedLanguage);
+  }
 
   routerAndClose(routeer: string, offcanvas: NgbOffcanvasRef): void {
     offcanvas.dismiss('Navigation click');

@@ -121,3 +121,21 @@
   height: 74px;
   background-color: #242425;
 }
+.flag-item {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  color: #898c9f !important;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  background: transparent;
+  border: none;
+  vertical-align: sub;
+}
+.img {
+  width: 25px;
+  height: 20px;
+}

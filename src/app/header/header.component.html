@@ -91,16 +91,35 @@
           {{ "n7" | translate }}
         </a>
       </div>
-
-      <button
-        class="button-primary"
-        [routerLink]="['/']"
-        [fragment]="'contact-us'"
-        (click)="navigateAndClose('contact-us', offcanvas)"
-      >
-        <span class="material-icons-outlined">call</span>
-        {{ "n4" | translate }}
-      </button>
+      <div class="d-flex justify-content-around">
+        <button
+          class="button-primary d-inline-flex"
+          [routerLink]="['/']"
+          [fragment]="'contact-us'"
+          (click)="navigateAndClose('contact-us', offcanvas)"
+        >
+          <span class="material-icons-outlined">call</span>
+          {{ "n4" | translate }}
+        </button>
+        <button
+          *ngIf="lang === 'en'"
+          value="ro"
+          (click)="changeLang('ro')"
+          class="flag-item d-inline-flex"
+        >
+          <img class="img" src="/romania.png" alt="Romanian Flag" />
+          <span class="flag-text">Romanian</span>
+        </button>
+        <button
+          *ngIf="lang === 'ro'"
+          value="ro"
+          (click)="changeLang('en')"
+          class="flag-item d-inline-flex"
+        >
+          <img class="img" src="/europe.png" alt="Romanian Flag" />
+          <span class="flag-text">English</span>
+        </button>
+      </div>
     </div>
   </ng-template>
 </div>

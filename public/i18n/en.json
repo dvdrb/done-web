@@ -120,5 +120,75 @@
   "n118": "We may update these Terms periodically. Any changes will be published on this page, and continued use of the site implies acceptance of the updated version.",
   "n119": "11. Governing Law",
   "n120": "These Terms are governed by Romanian law. Any disputes related to these Terms shall be settled by the competent courts of Romania.",
-  "n121": "Our Ofiice"
+  "n121": "Our Ofiice",
+  "n122": "Cookies Policy",
+  "n123": "Last updated: {{ lastUpdated }}",
+
+  "n124": "1. What are cookies?",
+  "n125": "Cookies are small text files stored on your device (computer, tablet, mobile phone) when you visit our website. They allow the website to recognize your device and remember information about your visit, such as language preferences, font size, and other display settings.",
+  "n126": "Cookies are widely used to make websites function more efficiently and to provide information to site owners. They enhance user experience and help personalize content.",
+
+  "n127": "2. Types of cookies we use",
+
+  "n128": "3. How we use cookies",
+  "n129": "We use cookies for various purposes, including:",
+  "n130": "Ensuring the proper functionality of our website",
+  "n131": "Saving your preferences and providing you with a personalized experience",
+  "n132": "Analyzing how our website is used to improve its performance",
+  "n133": "Delivering advertisements tailored to your interests",
+  "n134": "Facilitating content sharing on social media platforms",
+
+  "n135": "4. Third-party cookies",
+  "n136": "In addition to our own cookies, we allow certain third parties to place cookies on your device when you visit our site. These third parties include:",
+  "n137": "These third parties may use their own cookies to collect information about your online activities across different websites. We recommend reviewing their privacy policies for more information about how they use your data.",
+
+  "n138": "5. Managing cookies",
+  "n139": "You can control and manage cookies in various ways. Most web browsers allow you to manage your cookie preferences through their settings.",
+  "n140": "You can:",
+  "n141": "Please note that blocking or deleting cookies may affect your browsing experience and some features of our website may become unavailable.",
+  "n142": "For information on how to manage cookies in your browser, please refer to the browser's help pages:",
+
+  "n143": "6. Changes to the Cookie Policy",
+  "n144": "We reserve the right to update the Cookie Policy at any time. Any changes will be posted on this page, and the \"Last updated\" date at the top will be revised accordingly.",
+  "n145": "We encourage you to review this Cookie Policy periodically to stay informed about how we use cookies.",
+
+  "n146": "7. Contact",
+  "n147": "If you have any questions or concerns regarding the Cookie Policy or our practices, please contact us at:",
+  "n148": "Email: {{ contactInfo.email }}",
+  "n149": "Address: {{ contactInfo.address }}",
+  "n150": "Phone: {{ contactInfo.phone }}",
+  "cookieTypes": [
+    {
+      "title": "2.1. Strictly Necessary Cookies",
+      "content": "These cookies are essential for the proper functioning of our website...",
+      "examples": "Examples: session cookies, authentication cookies, shopping cart cookies."
+    },
+    {
+      "title": "2.2. Preference Cookies",
+      "content": "These cookies allow the website to remember choices you make...",
+      "examples": "Examples: language preference cookies, font size preference cookies."
+    },
+    {
+      "title": "2.3. Statistical (Analytical) Cookies",
+      "content": "These cookies collect information about how visitors use our website...",
+      "examples": "Examples: Google Analytics cookies..."
+    },
+    {
+      "title": "2.4. Marketing Cookies",
+      "content": "These cookies are used to track visitors across websites...",
+      "examples": "Examples: cookies for personalized ads, cookies for social media platforms."
+    }
+  ],
+  "thirdPartyCookies": [
+    "Analytics services (such as Google Analytics)...",
+    "Advertising networks - to deliver relevant advertisements...",
+    "Social media platforms (such as Facebook, Twitter)..."
+  ],
+  "managementOptions": [
+    "Delete existing cookies from your device",
+    "Block cookies from being placed on your device",
+    "Configure your browser to notify you before accepting cookies",
+    "Accept only certain types of cookies"
+  ],
+  "browsers": ["Google Chrome", "Mozilla Firefox", "Microsoft Edge", "Safari"]
 }
