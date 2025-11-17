@@ -6,10 +6,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.container {
-  max-width: 1200px;
-}
-
 .company-name {
   color: #7dd3ff;
   font-size: 18px;
@@ -89,7 +85,6 @@
 
 .country-info {
   display: flex;
-  justify-content: flex-end;
 }
 
 .flags {
@@ -135,15 +130,9 @@
 }
 
 @media (max-width: 992px) {
-  .container {
-    width: 100%;
-  }
   .down-footer {
     padding-right: 0;
     padding-left: 0;
-  }
-  .country-info {
-    justify-content: center;
   }
   .footer {
     padding: 40px 22px;
@@ -159,9 +148,5 @@
   .contact-info {
     text-align: center;
     align-items: center;
-  }
-
-  .country-info {
-    justify-content: flex-start;
   }
 }

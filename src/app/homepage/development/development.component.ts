@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-development',
-  imports: [CommonModule, NgbCollapseModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './development.component.html',
   styleUrl: './development.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

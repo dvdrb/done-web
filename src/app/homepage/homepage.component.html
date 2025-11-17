@@ -1,17 +1,21 @@
-<div class="page-shell">
-  <div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1 class="title">
+<div class="flex flex-col items-center gap-10">
+  <div
+    class="relative grid w-[min(1200px,92vw)] grid-cols-1 gap-10 overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(135deg,rgba(18,104,179,0.28),rgba(13,15,21,0.9))] px-6 py-9 shadow-[0_20px_80px_rgba(0,0,0,0.35)] md:px-10 md:py-14 lg:mt-20 lg:grid-cols-[2fr_1fr]"
+  >
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.06),transparent_30%),radial-gradient(circle_at_90%_10%,rgba(18,104,179,0.3),transparent_35%)] blur-[12px]"
+    ></div>
+    <div class="relative z-10 flex flex-col gap-4 text-center lg:text-left">
+      <h1 class="m-0 font-['IBM_Plex_Sans',sans-serif] text-[clamp(36px,5vw,64px)] font-bold leading-[1.05] text-[#f6f8fb]">
         {{ "n1" | translate }}
-        <span class="accent">{{ "n2" | translate }}</span>
+        <span class="text-sky-300">{{ "n2" | translate }}</span>
       </h1>
-      <p class="description">
-        Done Web Design — <span>{{ "n3" | translate }}</span>
+      <p class="m-0 max-w-3xl text-lg leading-[30px] text-[#d6dde8] lg:max-w-2xl">
+        Done Web Design — <span class="text-sky-300/80">{{ "n3" | translate }}</span>
       </p>
-      <div class="hero-actions">
+      <div class="flex flex-col items-stretch gap-4 md:flex-row md:items-center md:justify-center lg:justify-start">
         <a
-          class="book-call-btn"
+          class="group inline-flex items-center justify-center gap-2 rounded-[14px] bg-[linear-gradient(135deg,#4fb2ff,#1268b3)] px-5 py-[14px] text-base font-bold text-white shadow-[0_12px_30px_rgba(18,104,179,0.45)] transition hover:-translate-y-[2px] hover:shadow-[0_18px_40px_rgba(79,178,255,0.45)]"
           [routerLink]="['/']"
           [fragment]="'contact-us'"
           (click)="scrollToElement('contact-us')"
@@ -20,7 +24,7 @@
           {{ "n4" | translate }}
         </a>
         <a
-          class="ghost-btn"
+          class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base font-semibold text-slate-200 transition hover:border-white/30 hover:text-white"
           [routerLink]="['/']"
           [fragment]="'development-process'"
           (click)="scrollToElement('development-process')"
@@ -29,29 +33,35 @@
           <span class="material-icons-outlined">arrow_forward</span>
         </a>
       </div>
-      <div class="hero-pills">
-        <span class="pill">Enterprise builds</span>
-        <span class="pill">Design-first delivery</span>
-        <span class="pill">Nearshore partnership</span>
+      <div class="flex flex-wrap justify-center gap-3 lg:justify-start">
+        <span class="rounded-full border border-white/10 bg-white/10 px-[14px] py-[10px] text-sm text-[#dfe6f2]">Enterprise builds</span>
+        <span class="rounded-full border border-white/10 bg-white/10 px-[14px] py-[10px] text-sm text-[#dfe6f2]">Design-first delivery</span>
+        <span class="rounded-full border border-white/10 bg-white/10 px-[14px] py-[10px] text-sm text-[#dfe6f2]">Nearshore partnership</span>
       </div>
     </div>
-    <div class="hero-card">
-      <div class="stat">98%<small>delivery satisfaction</small></div>
-      <div class="stat">12+<small>active partnerships</small></div>
-      <div class="stat">24h<small>kickoff readiness</small></div>
+    <div class="relative z-10 grid grid-cols-1 gap-4 self-center rounded-2xl border border-white/10 bg-white/5 px-6 py-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-lg md:grid-cols-2 lg:grid-cols-3 lg:text-left">
+      <div class="flex items-baseline justify-center gap-3 font-['IBM_Plex_Sans',sans-serif] text-3xl font-bold text-[#f6f8fb] lg:justify-start">
+        98%<small class="text-sm font-medium uppercase tracking-[0.06em] text-[#9fb2c9]">delivery satisfaction</small>
+      </div>
+      <div class="flex items-baseline justify-center gap-3 font-['IBM_Plex_Sans',sans-serif] text-3xl font-bold text-[#f6f8fb] lg:justify-start">
+        12+<small class="text-sm font-medium uppercase tracking-[0.06em] text-[#9fb2c9]">active partnerships</small>
+      </div>
+      <div class="flex items-baseline justify-center gap-3 font-['IBM_Plex_Sans',sans-serif] text-3xl font-bold text-[#f6f8fb] lg:justify-start">
+        24h<small class="text-sm font-medium uppercase tracking-[0.06em] text-[#9fb2c9]">kickoff readiness</small>
+      </div>
     </div>
   </div>
 
-  <section id="development-process">
-    <app-development class="section" />
+  <section id="development-process" class="flex w-full justify-center scroll-mt-[90px]">
+    <app-development />
   </section>
-  <section id="industries">
-    <app-solutions class="section" />
+  <section id="industries" class="flex w-full justify-center scroll-mt-[90px]">
+    <app-solutions />
   </section>
-  <section id="top-challenges">
-    <app-challanges class="section" />
+  <section id="top-challenges" class="flex w-full justify-center scroll-mt-[90px]">
+    <app-challanges />
   </section>
-  <section id="contact-us">
-    <app-contact-us class="section" />
+  <section id="contact-us" class="flex w-full justify-center scroll-mt-[90px]">
+    <app-contact-us />
   </section>
 </div>

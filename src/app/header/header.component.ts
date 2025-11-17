@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
-import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
@@ -29,9 +28,8 @@ export class HeaderComponent {
       this.lang = e.lang;
     });
   }
-  private offcanvasService = inject(NgbOffcanvas);
-
   lang: string = 'en';
+  isMenuOpen = false;
 
   changeLang(lang: any) {
     this.lang = lang;
@@ -41,18 +39,22 @@ export class HeaderComponent {
     this.translate.use(selectedLanguage);
   }
 
-  routerAndClose(routeer: string, offcanvas: NgbOffcanvasRef): void {
-    offcanvas.dismiss('Navigation click');
+  routerAndClose(routeer: string): void {
+    this.isMenuOpen = false;
     const route = routeer.replace(/^\//, '');
     this.router.navigate(['/', this.lang, route]);
   }
-  navigateAndClose(elementId: string, offcanvasRef: NgbOffcanvasRef): void {
-    offcanvasRef.dismiss('Navigation click');
+  navigateAndClose(elementId: string): void {
+    this.isMenuOpen = false;
     this.scrollToElement(elementId);
   }
 
-  openEnd(content: TemplateRef<any>) {
-    this.offcanvasService.open(content, { position: 'top' });
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 
   scrollToElement(elementId: string): void {
