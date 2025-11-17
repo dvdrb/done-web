@@ -1,13 +1,17 @@
 <div class="terms-container">
-  <p class="title m-0">{{ "n99" | translate }}</p>
-  <p class="subtitle">
-    {{ "n100" | translate }}
-  </p>
-  <div class="terms-content">
-    <div class="terms-item my-3" *ngFor="let term of terms; last as isLast">
-      <p class="terms-item-title">{{ term.title }}</p>
-      <p class="terms-item-content">{{ term.content }}</p>
-      <div class="divider" *ngIf="!isLast"></div>
+  <div class="terms-surface">
+    <div class="terms-head">
+      <p class="eyebrow">Legal</p>
+      <p class="title m-0">{{ "n99" | translate }}</p>
+      <p class="subtitle">{{ "n100" | translate }}</p>
+    </div>
+
+    <div class="terms-content">
+      <div class="terms-item" *ngFor="let term of terms; last as isLast">
+        <p class="terms-item-title">{{ term.title }}</p>
+        <p class="terms-item-content">{{ term.content }}</p>
+        <div class="divider" *ngIf="!isLast"></div>
+      </div>
     </div>
   </div>
 </div>
