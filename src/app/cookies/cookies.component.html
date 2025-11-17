@@ -16,7 +16,7 @@
 
     <section class="section">
       <h2>{{ "n127" | translate }}</h2>
-      <div class="cookie-type" *ngFor="let type of cookieTypes">
+      <div class="cookie-type" *ngFor="let type of cookieTypes; trackBy: trackByIndex">
         <h3>{{ type.title }}</h3>
         <p>{{ type.content }}</p>
         <p class="examples">{{ type.examples }}</p>
@@ -39,7 +39,7 @@
       <h2>{{ "n135" | translate }}</h2>
       <p>{{ "n136" | translate }}</p>
       <ul>
-        <li *ngFor="let cookie of thirdPartyCookies">{{ cookie }}</li>
+        <li *ngFor="let cookie of thirdPartyCookies; trackBy: trackByIndex">{{ cookie }}</li>
       </ul>
       <p>{{ "n137" | translate }}</p>
     </section>
@@ -49,12 +49,12 @@
       <p>{{ "n139" | translate }}</p>
       <p>{{ "n140" | translate }}</p>
       <ul>
-        <li *ngFor="let option of managementOptions">{{ option }}</li>
+        <li *ngFor="let option of managementOptions; trackBy: trackByIndex">{{ option }}</li>
       </ul>
       <p>{{ "n141" | translate }}</p>
       <p>{{ "n142" | translate }}</p>
       <ul class="browsers">
-        <li *ngFor="let browser of browsers">{{ browser }}</li>
+        <li *ngFor="let browser of browsers; trackBy: trackByIndex">{{ browser }}</li>
       </ul>
     </section>
 

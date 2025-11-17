@@ -2,6 +2,7 @@
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
@@ -13,9 +14,26 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://donewebdesigns.com/en/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>1.00</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/" />
+  
+</url>
+<url>
   <loc>https://donewebdesigns.com/about-us/</loc>
   <lastmod>2025-04-20T13:17:26+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://donewebdesigns.com/en/about-us/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/about-us/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/about-us/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/about-us/" />
 </url>
 <url>
   <loc>https://donewebdesigns.com/faqs/</loc>
@@ -23,14 +41,80 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://donewebdesigns.com/en/faqs/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/faqs/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/faqs/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/faqs/" />
+</url>
+<url>
   <loc>https://donewebdesigns.com/cookies/</loc>
   <lastmod>2025-04-20T13:17:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://donewebdesigns.com/en/cookies/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/cookies/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/cookies/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/cookies/" />
+</url>
+<url>
   <loc>https://donewebdesigns.com/terms/</loc>
   <lastmod>2025-04-20T13:17:26+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+
+<!-- Romanian prefixed counterparts with alternates -->
+<url>
+  <loc>https://donewebdesigns.com/ro/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>1.00</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/" />
+</url>
+<url>
+  <loc>https://donewebdesigns.com/ro/about-us/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/about-us/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/about-us/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/about-us/" />
+</url>
+<url>
+  <loc>https://donewebdesigns.com/ro/faqs/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/faqs/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/faqs/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/faqs/" />
+</url>
+<url>
+  <loc>https://donewebdesigns.com/ro/cookies/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/cookies/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/cookies/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/cookies/" />
+</url>
+<url>
+  <loc>https://donewebdesigns.com/ro/terms/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/terms/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/terms/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/terms/" />
+</url>
+<url>
+  <loc>https://donewebdesigns.com/en/terms/</loc>
+  <lastmod>2025-04-20T13:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://donewebdesigns.com/en/terms/" />
+  <xhtml:link rel="alternate" hreflang="ro" href="https://donewebdesigns.com/ro/terms/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://donewebdesigns.com/terms/" />
 </url>
 
 

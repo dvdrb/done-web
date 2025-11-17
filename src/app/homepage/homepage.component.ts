@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, AfterViewInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -7,6 +7,9 @@ import { SolutionsComponent } from './solutions/solutions.component';
 import { ChallangesComponent } from './challanges/challanges.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TranslatePipe } from '@ngx-translate/core';
+import { SeoService } from '../shared/seo.service';
+import { TranslateService } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-homepage',
@@ -22,11 +25,34 @@ import { TranslatePipe } from '@ngx-translate/core';
   ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomepageComponent implements OnInit, AfterViewInit {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  private destroyRef = inject(DestroyRef);
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private seo: SeoService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit() {
+    this.translate
+      .stream(['meta.home.title', 'meta.home.description', 'breadcrumbs.home'])
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((t) => {
+        this.seo.setMeta({
+          title: t['meta.home.title'],
+          description: t['meta.home.description'],
+          path: '/',
+          breadcrumbs: [{ name: t['breadcrumbs.home'], path: '/' }],
+        });
+      });
+
+    // Core org/site JSON-LD once on home
+    this.seo.setJsonLd('organization', this.seo.organizationSchema());
+    this.seo.setJsonLd('website', this.seo.websiteSchema());
+
     // Subscribe to fragment changes
     this.route.fragment.subscribe((fragment) => {
       if (fragment) {
@@ -46,8 +72,10 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   scrollToElement(elementId: string): void {
-    // Navigate to homepage with fragment
-    this.router.navigate(['/'], { fragment: elementId }).then(() => {
+    // Navigate to homepage with fragment, keeping language prefix if present
+    const lang = this.route.snapshot.paramMap.get('lang');
+    const target = lang ? ['/', lang] : ['/'];
+    this.router.navigate(target, { fragment: elementId }).then(() => {
       // After navigation, try to scroll to the element
       setTimeout(() => {
         const element = document.getElementById(elementId);

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -26,6 +26,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   ],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactUsComponent {
   contactForm: FormGroup;

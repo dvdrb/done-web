@@ -5,7 +5,7 @@
     <p class="lede">We keep every stage transparent so you always know what's next.</p>
   </div>
   <div class="steps-grid">
-    <div *ngFor="let step of steps; let i = index" class="step-card">
+    <div *ngFor="let step of steps; let i = index; trackBy: trackByIndex" class="step-card">
       <div class="step-chip">{{ step.number }}</div>
       <div class="step-body">
         <h3>{{ step.title }}</h3>

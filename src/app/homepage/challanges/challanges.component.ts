@@ -1,22 +1,26 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject } from '@angular/core';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-challanges',
   imports: [NgbCollapseModule, CommonModule, TranslatePipe],
   templateUrl: './challanges.component.html',
   styleUrl: './challanges.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChallangesComponent {
+  private destroyRef = inject(DestroyRef);
   constructor(private translate: TranslateService) {}
   isCollapsed: boolean[] = Array(3).fill(true);
   challanges: { number: string; title: string; description: string }[] = [];
 
   ngOnInit(): void {
     this.translate
-      .get(['n28', 'n29', 'n30', 'n31', 'n32', 'n33'])
+      .stream(['n28', 'n29', 'n30', 'n31', 'n32', 'n33'])
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((translations) => {
         this.challanges = [
           {
@@ -36,5 +40,9 @@ export class ChallangesComponent {
           },
         ];
       });
+  }
+
+  trackByIndex(index: number) {
+    return index;
   }
 }
