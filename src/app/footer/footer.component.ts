@@ -25,7 +25,7 @@ export class FooterComponent implements OnInit {
 
   changeLang(lang: any) {
     const selectedLanguage = lang;
-    console.log(selectedLanguage);
+
     localStorage.setItem('lang', selectedLanguage);
     this.translate.use(selectedLanguage);
   }

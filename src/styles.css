@@ -1,12 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Global baseline */
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
-  background-color: #1a1a1a;
+  font-family: "Space Grotesk", sans-serif;
+  background: radial-gradient(circle at 15% 20%, rgba(18, 104, 179, 0.2), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.08), transparent 30%),
+    #0d0f15;
+  color: #e8ecf3;
 }
 
 .space-grotesk {
@@ -19,35 +24,15 @@ body {
   font-optical-sizing: auto;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* If you have a fixed header, add padding to sections */
 section[id] {
-  scroll-margin-top: 70px; /* Adjust this value based on your header height */
+  scroll-margin-top: 90px;
 }
+
 .offcanvas {
-  height: 300px !important;
+  height: 320px !important;
   width: 100% !important;
-  border-radius: 4px !important;
-  background-color: #1a1a1a !important;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: "Space Grotesk", sans-serif;
+  border-radius: 16px 16px 0 0 !important;
+  background-color: #0f1420 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 -18px 60px rgba(0, 0, 0, 0.25) !important;
 }
