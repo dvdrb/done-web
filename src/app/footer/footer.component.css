@@ -149,3 +149,19 @@
     padding: 40px 22px;
   }
 }
+
+@media (max-width: 768px) {
+  .nav-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-info {
+    text-align: center;
+    align-items: center;
+  }
+
+  .country-info {
+    justify-content: flex-start;
+  }
+}

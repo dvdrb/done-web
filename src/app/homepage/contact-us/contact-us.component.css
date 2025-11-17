@@ -224,6 +224,21 @@ button {
   text-decoration: underline;
 }
 
+@media (max-width: 820px) {
+  .contact-shell {
+    padding: 40px 28px;
+  }
+
+  .contact-copy,
+  .contact-copy .lede {
+    text-align: center;
+  }
+
+  .badges {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr;
@@ -231,5 +246,16 @@ button {
 
   .contact-shell {
     padding: 32px 22px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  button {
+    width: 100% !important;
+    text-align: center;
   }
 }
