@@ -1,21 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { NgbCollapse, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-development',
-  imports: [
-    MatCardModule,
-    CommonModule,
-    MatExpansionModule,
-    NgbCollapseModule,
-    TranslatePipe,
-  ],
+  imports: [CommonModule, NgbCollapseModule, TranslatePipe],
   templateUrl: './development.component.html',
   styleUrl: './development.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DevelopmentComponent {
   constructor(private translate: TranslateService) {}
@@ -25,7 +19,8 @@ export class DevelopmentComponent {
 
   ngOnInit(): void {
     this.translate
-      .get(['n10', 'n11', 'n12', 'n13', 'n14', 'n15', 'n16', 'n17'])
+      .stream(['n10', 'n11', 'n12', 'n13', 'n14', 'n15', 'n16', 'n17'])
+
       .subscribe((translations) => {
         this.steps = [
           {
@@ -50,5 +45,9 @@ export class DevelopmentComponent {
           },
         ];
       });
+  }
+
+  trackByIndex(index: number) {
+    return index;
   }
 }

@@ -194,5 +194,37 @@
     "email": "contact.office@yahoo.com",
     "address": "Str. Maria Rosetti nr.30, București, România",
     "phone": "+40 754 192 036"
+  },
+  "meta": {
+    "home": {
+      "title": "Design și Dezvoltare Website | Done Web Design",
+      "description": "Construim site-uri și aplicații web rapide și orientate spre conversie. Livrare ghidată de design, proces transparent și rezultate măsurabile."
+    },
+    "about": {
+      "title": "Despre Noi | Done Web Design",
+      "description": "Agenție software orientată pe design, livrăm soluții web performante și scalabile, cu colaborare transparentă."
+    },
+    "faqs": {
+      "title": "Întrebări frecvente | Done Web Design",
+      "description": "Răspunsuri la întrebări despre durată, prețuri, proces și modul în care livrăm proiecte web."
+    },
+    "cookies": {
+      "title": "Politica cookie-uri | Done Web Design",
+      "description": "Află cum folosește Done Web Design cookie-uri și tehnologii similare pentru a-ți îmbunătăți experiența."
+    },
+    "terms": {
+      "title": "Termeni & condiții | Done Web Design",
+      "description": "Citește termenii și condițiile privind colaborarea, livrabilele și plățile."
+    },
+    "service": {
+      "name": "Dezvoltare Web Personalizată"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Acasă",
+    "about": "Despre Noi",
+    "faqs": "Întrebări frecvente",
+    "cookies": "Politica cookie-uri",
+    "terms": "Termeni & condiții"
   }
 }

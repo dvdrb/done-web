@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-challanges',
   imports: [NgbCollapseModule, CommonModule, TranslatePipe],
   templateUrl: './challanges.component.html',
   styleUrl: './challanges.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChallangesComponent {
   constructor(private translate: TranslateService) {}
@@ -16,7 +18,8 @@ export class ChallangesComponent {
 
   ngOnInit(): void {
     this.translate
-      .get(['n28', 'n29', 'n30', 'n31', 'n32', 'n33'])
+      .stream(['n28', 'n29', 'n30', 'n31', 'n32', 'n33'])
+
       .subscribe((translations) => {
         this.challanges = [
           {
@@ -36,5 +39,9 @@ export class ChallangesComponent {
           },
         ];
       });
+  }
+
+  trackByIndex(index: number) {
+    return index;
   }
 }

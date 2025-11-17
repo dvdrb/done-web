@@ -1,13 +1,10 @@
-import { Component, inject, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { NgbOffcanvas, NgbOffcanvasRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '@ngx-translate/core';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -15,16 +12,23 @@ import { TranslateService } from '@ngx-translate/core';
   imports: [
     CommonModule,
     RouterModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
     TranslatePipe,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  constructor(private router: Router, private translate: TranslateService) {}
+  constructor(private router: Router, private translate: TranslateService) {
+    // Initialize language from current translate service or localStorage
+    const stored = typeof window !== 'undefined' ? window.localStorage.getItem('lang') : null;
+    this.lang = stored || this.translate.currentLang || this.translate.getDefaultLang() || 'en';
+
+    // Keep local state in sync when language changes elsewhere
+    this.translate.onLangChange.subscribe((e: LangChangeEvent) => {
+      this.lang = e.lang;
+    });
+  }
   private offcanvasService = inject(NgbOffcanvas);
 
   lang: string = 'en';
@@ -39,7 +43,8 @@ export class HeaderComponent {
 
   routerAndClose(routeer: string, offcanvas: NgbOffcanvasRef): void {
     offcanvas.dismiss('Navigation click');
-    this.router.navigate([routeer]);
+    const route = routeer.replace(/^\//, '');
+    this.router.navigate(['/', this.lang, route]);
   }
   navigateAndClose(elementId: string, offcanvasRef: NgbOffcanvasRef): void {
     offcanvasRef.dismiss('Navigation click');
@@ -51,8 +56,8 @@ export class HeaderComponent {
   }
 
   scrollToElement(elementId: string): void {
-    // Navigate to homepage with fragment
-    this.router.navigate(['/'], { fragment: elementId }).then(() => {
+    // Navigate to homepage with fragment under current language
+    this.router.navigate(['/', this.lang], { fragment: elementId }).then(() => {
       // After navigation, try to scroll to the element
       setTimeout(() => {
         const element = document.getElementById(elementId);

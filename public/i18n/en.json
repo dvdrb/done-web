@@ -190,5 +190,37 @@
     "Configure your browser to notify you before accepting cookies",
     "Accept only certain types of cookies"
   ],
-  "browsers": ["Google Chrome", "Mozilla Firefox", "Microsoft Edge", "Safari"]
+  "browsers": ["Google Chrome", "Mozilla Firefox", "Microsoft Edge", "Safari"],
+  "meta": {
+    "home": {
+      "title": "Custom Website Design & Development | Done Web Design",
+      "description": "We build fast, conversion-focused websites and web apps. Design-led delivery, transparent process, and measurable results."
+    },
+    "about": {
+      "title": "About Us | Done Web Design",
+      "description": "We are a design-led software agency delivering performant, scalable web solutions with transparent collaboration."
+    },
+    "faqs": {
+      "title": "FAQs | Done Web Design",
+      "description": "Answers to common questions about timelines, pricing, process, and how we deliver web projects."
+    },
+    "cookies": {
+      "title": "Cookie Policy | Done Web Design",
+      "description": "Learn how Done Web Design uses cookies and similar technologies to enhance your experience."
+    },
+    "terms": {
+      "title": "Terms & Conditions | Done Web Design",
+      "description": "Read our terms and conditions for project engagement, deliverables, and payment."
+    },
+    "service": {
+      "name": "Custom Web Development"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "about": "About Us",
+    "faqs": "FAQs",
+    "cookies": "Cookie Policy",
+    "terms": "Terms & Conditions"
+  }
 }

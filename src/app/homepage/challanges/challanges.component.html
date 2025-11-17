@@ -5,7 +5,7 @@
     <p class="lede">Common blockers we solve before they ever slow you down.</p>
   </div>
   <div class="challenge-grid">
-    <div *ngFor="let challange of challanges; let i = index" class="challenge-card">
+    <div *ngFor="let challange of challanges; let i = index; trackBy: trackByIndex" class="challenge-card">
       <div class="step-chip">{{ challange.number }}</div>
       <div class="challenge-body">
         <h3>{{ challange.title }}</h3>
