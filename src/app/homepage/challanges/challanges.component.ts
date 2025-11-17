@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject } from '@angular/core';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -12,6 +12,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChallangesComponent {
+  private destroyRef = inject(DestroyRef);
   constructor(private translate: TranslateService) {}
   isCollapsed: boolean[] = Array(3).fill(true);
   challanges: { number: string; title: string; description: string }[] = [];
@@ -19,7 +20,7 @@ export class ChallangesComponent {
   ngOnInit(): void {
     this.translate
       .stream(['n28', 'n29', 'n30', 'n31', 'n32', 'n33'])
-
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((translations) => {
         this.challanges = [
           {

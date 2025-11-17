@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -14,6 +14,7 @@ import { SeoService } from '../shared/seo.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TermsComponent implements OnInit {
+  private destroyRef = inject(DestroyRef);
   terms: { title: string; content: string }[] = [];
 
   constructor(private translate: TranslateService, private seo: SeoService) {}
@@ -26,7 +27,7 @@ export class TermsComponent implements OnInit {
         'breadcrumbs.home',
         'breadcrumbs.terms',
       ])
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((t) => {
         this.seo.setMeta({
           title: t['meta.terms.title'],

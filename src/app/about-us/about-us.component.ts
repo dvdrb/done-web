@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChallangesComponent } from '../homepage/challanges/challanges.component';
 import { ContactUsComponent } from '../homepage/contact-us/contact-us.component';
@@ -21,6 +21,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutUsComponent implements OnInit {
+  private destroyRef = inject(DestroyRef);
   constructor(private seo: SeoService, private translate: TranslateService) {}
 
   ngOnInit(): void {
@@ -31,7 +32,7 @@ export class AboutUsComponent implements OnInit {
         'breadcrumbs.home',
         'breadcrumbs.about',
       ])
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((t) => {
         this.seo.setMeta({
           title: t['meta.about.title'],
@@ -42,15 +43,15 @@ export class AboutUsComponent implements OnInit {
             { name: t['breadcrumbs.about'], path: '/about-us' },
           ],
         });
-      });
 
-    const aboutSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'AboutPage',
-      name: 'About Done Web Design',
-      url: 'https://donewebdesigns.com/about-us',
-      mainEntity: this.seo.organizationSchema(),
-    };
-    this.seo.setJsonLd('about', aboutSchema);
+        const aboutSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: t['meta.about.title'],
+          url: 'https://donewebdesigns.com/about-us',
+          mainEntity: this.seo.organizationSchema(),
+        };
+        this.seo.setJsonLd('about', aboutSchema);
+      });
   }
 }

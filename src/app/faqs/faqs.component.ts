@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,6 +14,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FaqsComponent implements OnInit {
+  private destroyRef = inject(DestroyRef);
   constructor(private seo: SeoService, private translate: TranslateService) {}
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class FaqsComponent implements OnInit {
         'breadcrumbs.home',
         'breadcrumbs.faqs',
       ])
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((t) => {
         this.seo.setMeta({
           title: t['meta.faqs.title'],
@@ -52,7 +53,7 @@ export class FaqsComponent implements OnInit {
     ];
     this.translate
       .stream(pairs.flat())
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((t) => {
         const mainEntity = pairs.map(([q, a]) => ({
           '@type': 'Question',

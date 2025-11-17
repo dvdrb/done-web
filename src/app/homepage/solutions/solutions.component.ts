@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SeoService } from '../../shared/seo.service';
@@ -14,6 +14,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SolutionsComponent implements OnInit {
+  private destroyRef = inject(DestroyRef);
   constructor(private seo: SeoService, private translate: TranslateService) {}
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class SolutionsComponent implements OnInit {
     // If this were routed, we would set a Services schema like below:
     this.translate
       .stream(['meta.service.name'])
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((t) => {
         const servicesSchema = {
           '@context': 'https://schema.org',

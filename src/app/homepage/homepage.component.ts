@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, AfterViewInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, AfterViewInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -28,6 +28,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomepageComponent implements OnInit, AfterViewInit {
+  private destroyRef = inject(DestroyRef);
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -38,7 +39,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.translate
       .stream(['meta.home.title', 'meta.home.description', 'breadcrumbs.home'])
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((t) => {
         this.seo.setMeta({
           title: t['meta.home.title'],

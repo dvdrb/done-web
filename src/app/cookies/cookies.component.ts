@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -14,6 +14,7 @@ import { SeoService } from '../shared/seo.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CookiesComponent implements OnInit {
+  private destroyRef = inject(DestroyRef);
   lastUpdated = 'April 8, 2025';
 
   cookieTypes: any[] = [];
@@ -32,7 +33,7 @@ export class CookiesComponent implements OnInit {
         'breadcrumbs.home',
         'breadcrumbs.cookies',
       ])
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((t) => {
         this.seo.setMeta({
           title: t['meta.cookies.title'],
@@ -61,7 +62,7 @@ export class CookiesComponent implements OnInit {
         'browsers',
         'contactInfo',
       ])
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((translations) => {
         this.cookieTypes = translations['cookieTypes'];
         this.thirdPartyCookies = translations['thirdPartyCookies'];
