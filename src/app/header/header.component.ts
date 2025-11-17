@@ -32,7 +32,7 @@ export class HeaderComponent {
   changeLang(lang: any) {
     this.lang = lang;
     const selectedLanguage = lang;
-    console.log(selectedLanguage);
+
     localStorage.setItem('lang', selectedLanguage);
     this.translate.use(selectedLanguage);
   }

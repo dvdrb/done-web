@@ -1,67 +1,15 @@
-<div class="challenges-container d-none d-lg-flex flex-row">
-  <div class="d-flex justify-content-center flex-column">
-    <p class="title-blue">{{ "n26" | translate }}</p>
-    <p class="challenges-title-text">{{ "n27" | translate }}</p>
+<div class="challenges">
+  <div class="section-head">
+    <p class="eyebrow">{{ "n26" | translate }}</p>
+    <h2>{{ "n27" | translate }}</h2>
+    <p class="lede">Common blockers we solve before they ever slow you down.</p>
   </div>
-  <div *ngFor="let challange of challanges; let i = index" class="container">
-    <div
-      (mouseleave)="isCollapsed[i] = true"
-      (mouseenter)="isCollapsed[i] = false"
-      [attr.aria-expanded]="!isCollapsed[i]"
-      aria-controls="collapseExample"
-      class="collapse-container d-flex flex-column justify-content-between"
-    >
-      <h1 class="number">{{ challange.number }}</h1>
-      <p class="step-title">{{ challange.title }}</p>
-    </div>
-
-    <div style="min-height: 150px">
-      <div
-        (mouseleave)="isCollapsed[i] = true"
-        (mouseenter)="isCollapsed[i] = false"
-        #collapse="ngbCollapse"
-        [(ngbCollapse)]="isCollapsed[i]"
-        [horizontal]="true"
-        style="max-width: 300px"
-      >
-        <div class="card" style="width: 300px">
-          <div class="card-body">
-            {{ challange.description }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="challenges-container d-lg-none flex-column">
-  <div class="title align-self-center">
-    <p class="title-blue m-0">{{ "n26" | translate }}</p>
-    <p class="challenges-title-text">{{ "n27" | translate }}</p>
-  </div>
-  <div class="d-flex flex-column">
-    <div *ngFor="let challange of challanges; let i = index" class="container">
-      <div
-        (click)="isCollapsed[i] = !isCollapsed[i]"
-        [attr.aria-expanded]="!isCollapsed[i]"
-        aria-controls="collapseExample"
-        class="collapse-container d-flex flex-column justify-content-between"
-      >
-        <h1 class="number">{{ challange.number }}</h1>
-        <p class="step-title">{{ challange.title }}</p>
-      </div>
-
-      <div>
-        <div
-          #collapse="ngbCollapse"
-          [(ngbCollapse)]="isCollapsed[i]"
-          style="max-width: 100%"
-        >
-          <div class="card">
-            <div class="card-body">
-              {{ challange.description }}
-            </div>
-          </div>
-        </div>
+  <div class="challenge-grid">
+    <div *ngFor="let challange of challanges; let i = index" class="challenge-card">
+      <div class="step-chip">{{ challange.number }}</div>
+      <div class="challenge-body">
+        <h3>{{ challange.title }}</h3>
+        <p>{{ challange.description }}</p>
       </div>
     </div>
   </div>

@@ -1,78 +1,83 @@
 <div class="cookies-container">
-  <div class="cookies-title">{{ "n122" | translate }}</div>
-  <div class="last-updated">
-    {{ "n123" | translate : { lastUpdated: lastUpdated } }}
+  <div class="cookies-head">
+    <p class="eyebrow">Policies</p>
+    <div class="cookies-title">{{ "n122" | translate }}</div>
+    <div class="last-updated">
+      {{ "n123" | translate : { lastUpdated: lastUpdated } }}
+    </div>
   </div>
 
-  <section class="section">
-    <h2>{{ "n124" | translate }}</h2>
-    <p>{{ "n125" | translate }}</p>
-    <p>{{ "n126" | translate }}</p>
-  </section>
+  <div class="section-grid">
+    <section class="section">
+      <h2>{{ "n124" | translate }}</h2>
+      <p>{{ "n125" | translate }}</p>
+      <p>{{ "n126" | translate }}</p>
+    </section>
 
-  <section class="section">
-    <h2>{{ "n127" | translate }}</h2>
-    <div class="cookie-type" *ngFor="let type of cookieTypes">
-      <h3>{{ type.title }}</h3>
-      <p>{{ type.content }}</p>
-      <p class="examples">{{ type.examples }}</p>
-    </div>
-  </section>
+    <section class="section">
+      <h2>{{ "n127" | translate }}</h2>
+      <div class="cookie-type" *ngFor="let type of cookieTypes">
+        <h3>{{ type.title }}</h3>
+        <p>{{ type.content }}</p>
+        <p class="examples">{{ type.examples }}</p>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>{{ "n128" | translate }}</h2>
-    <p>{{ "n129" | translate }}</p>
-    <ul>
-      <li>{{ "n130" | translate }}</li>
-      <li>{{ "n131" | translate }}</li>
-      <li>{{ "n132" | translate }}</li>
-      <li>{{ "n133" | translate }}</li>
-      <li>{{ "n134" | translate }}</li>
-    </ul>
-  </section>
+    <section class="section">
+      <h2>{{ "n128" | translate }}</h2>
+      <p>{{ "n129" | translate }}</p>
+      <ul>
+        <li>{{ "n130" | translate }}</li>
+        <li>{{ "n131" | translate }}</li>
+        <li>{{ "n132" | translate }}</li>
+        <li>{{ "n133" | translate }}</li>
+        <li>{{ "n134" | translate }}</li>
+      </ul>
+    </section>
 
-  <section class="section">
-    <h2>{{ "n135" | translate }}</h2>
-    <p>{{ "n136" | translate }}</p>
-    <ul>
-      <li *ngFor="let cookie of thirdPartyCookies">{{ cookie }}</li>
-    </ul>
-    <p>{{ "n137" | translate }}</p>
-  </section>
+    <section class="section">
+      <h2>{{ "n135" | translate }}</h2>
+      <p>{{ "n136" | translate }}</p>
+      <ul>
+        <li *ngFor="let cookie of thirdPartyCookies">{{ cookie }}</li>
+      </ul>
+      <p>{{ "n137" | translate }}</p>
+    </section>
 
-  <section class="section">
-    <h2>{{ "n138" | translate }}</h2>
-    <p>{{ "n139" | translate }}</p>
-    <p>{{ "n140" | translate }}</p>
-    <ul>
-      <li *ngFor="let option of managementOptions">{{ option }}</li>
-    </ul>
-    <p>{{ "n141" | translate }}</p>
-    <p>{{ "n142" | translate }}</p>
-    <ul class="browsers">
-      <li *ngFor="let browser of browsers">{{ browser }}</li>
-    </ul>
-  </section>
+    <section class="section">
+      <h2>{{ "n138" | translate }}</h2>
+      <p>{{ "n139" | translate }}</p>
+      <p>{{ "n140" | translate }}</p>
+      <ul>
+        <li *ngFor="let option of managementOptions">{{ option }}</li>
+      </ul>
+      <p>{{ "n141" | translate }}</p>
+      <p>{{ "n142" | translate }}</p>
+      <ul class="browsers">
+        <li *ngFor="let browser of browsers">{{ browser }}</li>
+      </ul>
+    </section>
 
-  <section class="section">
-    <h2>{{ "n143" | translate }}</h2>
-    <p>{{ "n144" | translate }}</p>
-    <p>{{ "n145" | translate }}</p>
-  </section>
+    <section class="section">
+      <h2>{{ "n143" | translate }}</h2>
+      <p>{{ "n144" | translate }}</p>
+      <p>{{ "n145" | translate }}</p>
+    </section>
 
-  <section class="section">
-    <h2>{{ "n146" | translate }}</h2>
-    <p>{{ "n147" | translate }}</p>
-    <div class="contact-info d-flex flex-column">
-      <a href="mailto:{{ contactInfo.email }}" target="_blank">
-        {{ "n148" | translate : { contactInfo: contactInfo } }}
-      </a>
-      <a>
-        {{ "n149" | translate : { contactInfo: contactInfo } }}
-      </a>
-      <a href="tel:{{ contactInfo.phone }}" target="_blank">
-        {{ "n150" | translate : { contactInfo: contactInfo } }}
-      </a>
-    </div>
-  </section>
+    <section class="section">
+      <h2>{{ "n146" | translate }}</h2>
+      <p>{{ "n147" | translate }}</p>
+      <div class="contact-info d-flex flex-column">
+        <a href="mailto:{{ contactInfo.email }}" target="_blank">
+          {{ "n148" | translate : { contactInfo: contactInfo } }}
+        </a>
+        <a>
+          {{ "n149" | translate : { contactInfo: contactInfo } }}
+        </a>
+        <a href="tel:{{ contactInfo.phone }}" target="_blank">
+          {{ "n150" | translate : { contactInfo: contactInfo } }}
+        </a>
+      </div>
+    </section>
+  </div>
 </div>

@@ -1,56 +1,36 @@
 <div class="header d-none d-lg-flex">
-  <div class="d-flex justify-content-between align-items-center contain">
-    <div class="logo">
-      <img
-        src="/dwd-logo.png"
-        width="210"
-        height="50"
-        alt="logo"
-        [routerLink]="['/']"
-        class="cursor-pointer"
-      />
+  <div class="contain">
+    <div class="logo" [routerLink]="['/']">
+      <img src="/dwd-logo.png" width="180" height="44" alt="logo" class="cursor-pointer" />
+      <span class="tagline">Design-led software delivery</span>
     </div>
     <div class="menu">
-      <a
-        [routerLink]="['/about-us']"
-        class="menu-item"
-        routerLinkActive="active"
-      >
-        {{ "n5" | translate }}
-      </a>
-      <a
-        class="menu-item"
-        [routerLink]="['/']"
-        [fragment]="'development-process'"
-        (click)="scrollToElement('development-process')"
-      >
+      <a [routerLink]="['/about-us']" class="menu-item" routerLinkActive="active">{{ "n5" | translate }}</a>
+      <a class="menu-item" [routerLink]="['/']" [fragment]="'development-process'" (click)="scrollToElement('development-process')">
         {{ "n6" | translate }}
       </a>
       <a class="menu-item" [routerLink]="['/faqs']">{{ "n7" | translate }}</a>
+      <div class="flag-switcher">
+        <button *ngIf="lang === 'en'" value="ro" (click)="changeLang('ro')" class="flag-item">
+          <img class="img" src="/romania.png" alt="Romanian Flag" />
+          <span class="flag-text">Romanian</span>
+        </button>
+        <button *ngIf="lang === 'ro'" value="ro" (click)="changeLang('en')" class="flag-item">
+          <img class="img" src="/europe.png" alt="Romanian Flag" />
+          <span class="flag-text">English</span>
+        </button>
+      </div>
     </div>
-
-    <button
-      class="button-primary"
-      [routerLink]="['/']"
-      [fragment]="'contact-us'"
-      (click)="scrollToElement('contact-us')"
-    >
+    <button class="button-primary" [routerLink]="['/']" [fragment]="'contact-us'" (click)="scrollToElement('contact-us')">
       <span class="material-icons-outlined">call</span>
       {{ "n4" | translate }}
     </button>
   </div>
 </div>
 
-<div class="d-flex d-flex d-lg-none header-mobile">
+<div class="header-mobile d-flex d-lg-none">
   <div class="logo">
-    <img
-      src="/dwd-logo.png"
-      width="210"
-      height="50"
-      alt="logo"
-      [routerLink]="['/']"
-      class="cursor-pointer"
-    />
+    <img src="/dwd-logo.png" width="180" height="44" alt="logo" [routerLink]="['/']" class="cursor-pointer" />
   </div>
   <a class="btn btn-lg btn-outline-primary" (click)="openEnd(content)">
     <span class="material-icons-outlined">menu</span>
@@ -58,64 +38,30 @@
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
       <h4 class="offcanvas-title">{{ "n46" | translate }}</h4>
-      <button
-        type="button"
-        class="btn-close"
-        aria-label="Close"
-        (click)="offcanvas.dismiss('Cross click')"
-      ></button>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
     </div>
     <div class="offcanvas-body">
-      <div class="menu flex-column d-flex gap-2 align-items-center">
-        <a
-          (click)="routerAndClose('/about-us', offcanvas)"
-          [routerLink]="['/faqs']"
-          class="menu-item"
-          routerLinkActive="active"
-        >
+      <div class="menu flex-column d-flex gap-3 align-items-start">
+        <a (click)="routerAndClose('/about-us', offcanvas)" [routerLink]="['/about-us']" class="menu-item" routerLinkActive="active">
           {{ "n5" | translate }}
         </a>
-        <a
-          class="menu-item"
-          [routerLink]="['/']"
-          [fragment]="'development-process'"
-          (click)="navigateAndClose('development-process', offcanvas)"
-        >
+        <a class="menu-item" [routerLink]="['/']" [fragment]="'development-process'" (click)="navigateAndClose('development-process', offcanvas)">
           {{ "n6" | translate }}
         </a>
-        <a
-          class="menu-item"
-          (click)="routerAndClose('/faqs', offcanvas)"
-          [routerLink]="['/faqs']"
-        >
+        <a class="menu-item" (click)="routerAndClose('/faqs', offcanvas)" [routerLink]="['/faqs']">
           {{ "n7" | translate }}
         </a>
       </div>
-      <div class="d-flex justify-content-around">
-        <button
-          class="button-primary d-inline-flex"
-          [routerLink]="['/']"
-          [fragment]="'contact-us'"
-          (click)="navigateAndClose('contact-us', offcanvas)"
-        >
+      <div class="d-flex justify-content-between align-items-center gap-2 mt-3 flex-wrap">
+        <button class="button-primary d-inline-flex" [routerLink]="['/']" [fragment]="'contact-us'" (click)="navigateAndClose('contact-us', offcanvas)">
           <span class="material-icons-outlined">call</span>
           {{ "n4" | translate }}
         </button>
-        <button
-          *ngIf="lang === 'en'"
-          value="ro"
-          (click)="changeLang('ro')"
-          class="flag-item d-inline-flex"
-        >
+        <button *ngIf="lang === 'en'" value="ro" (click)="changeLang('ro')" class="flag-item d-inline-flex">
           <img class="img" src="/romania.png" alt="Romanian Flag" />
           <span class="flag-text">Romanian</span>
         </button>
-        <button
-          *ngIf="lang === 'ro'"
-          value="ro"
-          (click)="changeLang('en')"
-          class="flag-item d-inline-flex"
-        >
+        <button *ngIf="lang === 'ro'" value="ro" (click)="changeLang('en')" class="flag-item d-inline-flex">
           <img class="img" src="/europe.png" alt="Romanian Flag" />
           <span class="flag-text">English</span>
         </button>
