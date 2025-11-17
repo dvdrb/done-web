@@ -1,64 +1,54 @@
-<div
-  class="w-[min(1200px,92vw)] space-y-7 rounded-[28px] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_10px_50px_rgba(0,0,0,0.25)] md:px-10 lg:px-12"
->
-  <div class="flex flex-col gap-3 text-center lg:text-left">
-    <p class="text-sm font-semibold uppercase tracking-[0.04em] text-sky-300">{{ "n34" | translate }}</p>
-    <h2 class="m-0 font-['IBM_Plex_Sans',sans-serif] text-[clamp(24px,3vw,36px)] font-bold text-[#f6f8fb]">
-      {{ "n35" | translate }}
-    </h2>
-    <p class="m-0 text-base text-[#b6c3d6] lg:max-w-3xl">
-      Tell us about your product, roadmap, and timelines. We'll respond within one business day.
-    </p>
-    <div class="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-      <span class="rounded-full border border-white/10 bg-white/10 px-[14px] py-[10px] text-sm text-[#dfe6f2]">Product strategy</span>
-      <span class="rounded-full border border-white/10 bg-white/10 px-[14px] py-[10px] text-sm text-[#dfe6f2]">UI/UX leadership</span>
-      <span class="rounded-full border border-white/10 bg-white/10 px-[14px] py-[10px] text-sm text-[#dfe6f2]">Dedicated squads</span>
+<div class="contact-shell">
+  <div class="contact-copy">
+    <p class="eyebrow">{{ "n34" | translate }}</p>
+    <h2>{{ "n35" | translate }}</h2>
+    <p class="lede">Tell us about your product, roadmap, and timelines. We'll respond within one business day.</p>
+    <div class="badges">
+      <span class="pill">Product strategy</span>
+      <span class="pill">UI/UX leadership</span>
+      <span class="pill">Dedicated squads</span>
     </div>
   </div>
-  <div class="grid gap-5 lg:grid-cols-[1.4fr_0.8fr]">
-    <div class="rounded-[18px] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 pb-6 pt-4">
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4 px-4">
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <mat-form-field class="w-full" appearance="fill">
+  <div class="contact-grid">
+    <div class="contact-form">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="px-3">
+        <div class="row mb-3">
+          <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
             <input [placeholder]="'n36' | translate" matInput formControlName="name" />
           </mat-form-field>
-          <mat-form-field class="w-full" appearance="fill">
+          <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
             <input [placeholder]="'n37' | translate" matInput formControlName="company" />
           </mat-form-field>
         </div>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <mat-form-field class="w-full" appearance="fill">
+        <div class="row mb-4">
+          <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
             <input [placeholder]="'n38' | translate" matInput formControlName="email" type="email" />
           </mat-form-field>
-          <mat-form-field class="w-full" appearance="fill">
+          <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
             <input [placeholder]="'n39' | translate" matInput formControlName="phone" type="tel" />
           </mat-form-field>
         </div>
-        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <button
-            class="inline-flex h-12 w-full items-center justify-center rounded-xl bg-gradient-to-r from-sky-400 to-blue-700 px-4 text-base font-bold text-white shadow-[0_10px_30px_rgba(18,104,179,0.35)] transition hover:-translate-y-[2px] hover:shadow-[0_12px_36px_rgba(79,178,255,0.45)] disabled:cursor-not-allowed disabled:bg-slate-500 disabled:shadow-none md:w-[200px]"
-            type="submit"
-            [disabled]="!contactForm.valid"
-          >
+        <div class="form-actions">
+          <button class="btn-primary" type="submit" [class.disabled]="!contactForm.valid" [disabled]="!contactForm.valid">
             {{ "n40" | translate }}
           </button>
-          <span class="text-sm font-normal leading-[18px] text-[#d9d9d9]">
+          <span class="privacy-notice">
             {{ "n41" | translate }}
-            <a routerLink="/privacy-policy" class="text-[#d9d9d9] underline transition hover:text-sky-300">{{ "n42" | translate }}</a>
+            <a routerLink="/privacy-policy" class="privacy-link">{{ "n42" | translate }}</a>
           </span>
         </div>
       </form>
     </div>
-    <div class="flex flex-col gap-4 rounded-[18px] border border-white/10 bg-white/10 p-6">
-      <h3 class="m-0 font-['IBM_Plex_Sans',sans-serif] text-lg font-bold text-[#f6f8fb]">{{ "n121" | translate }}</h3>
-      <div class="flex flex-col items-start gap-2">
-        <img src="/romania.png" alt="Romania Flag" class="h-8 w-11 rounded-md border border-white/20" />
-        <span class="text-sm font-bold uppercase tracking-[0.08em] text-[#dfe6f2]">Romania</span>
-        <div class="text-sm leading-6 text-[#c5d0df]">
+    <div class="office-card">
+      <h3 class="office-heading">{{ "n121" | translate }}</h3>
+      <div class="country-info">
+        <img src="/romania.png" alt="Romania Flag" class="flag" />
+        <span class="country">Romania</span>
+        <div class="address-info">
           Suite 5, Plaza 256,<br />
           Sector 2, Strada Maria Rosetti 36,<br />
           Bucharest, Romania<br />
-          <a href="tel:+40734102096" class="text-sky-300 transition hover:underline">+40734102096</a>
+          <a href="tel:+40734102096">+40734102096</a>
         </div>
       </div>
     </div>
