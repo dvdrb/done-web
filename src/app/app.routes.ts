@@ -30,7 +30,7 @@ export const routes: Routes = [
   // Language-prefixed routes
   {
     path: ':lang',
-    canActivate: [langGuard],
+    canMatch: [langGuard],
     children: [
       {
         path: '',

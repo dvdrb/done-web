@@ -1,14 +1,14 @@
 <div class="header d-none d-lg-flex">
   <div class="contain">
-    <div class="logo" [routerLink]="['/', lang]">
+    <a class="logo" [routerLink]="['/', lang]">
       <img
         src="/dwd-logo.png"
         width="180"
         height="44"
-        alt="logo"
+        alt="Done Web Design logo"
         class="cursor-pointer"
       />
-    </div>
+    </a>
     <div class="menu">
       <a
         [routerLink]="['/', lang, 'about-us']"
@@ -46,7 +46,7 @@
         </button>
       </div>
     </div>
-    <button
+    <a
       class="button-primary"
       [routerLink]="['/', lang]"
       [fragment]="'contact-us'"
@@ -54,24 +54,25 @@
     >
       <span class="material-icons-outlined">call</span>
       {{ "n4" | translate }}
-    </button>
+    </a>
   </div>
 </div>
 
 <div class="header-mobile d-flex d-lg-none">
   <div class="logo">
-    <img
-      src="/dwd-logo.png"
-      width="180"
-      height="44"
-      alt="logo"
-      [routerLink]="['/', lang]"
-      class="cursor-pointer"
-    />
+    <a [routerLink]="['/', lang]">
+      <img
+        src="/dwd-logo.png"
+        width="180"
+        height="44"
+        alt="Done Web Design logo"
+        class="cursor-pointer"
+      />
+    </a>
   </div>
-  <a class="btn btn-lg btn-outline-primary" (click)="openEnd(content)">
+  <button type="button" class="btn btn-lg btn-outline-primary" (click)="openEnd(content)">
     <span class="material-icons-outlined">menu</span>
-  </a>
+  </button>
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
       <h4 class="offcanvas-title">{{ "n46" | translate }}</h4>
@@ -111,7 +112,7 @@
       <div
         class="d-flex justify-content-between align-items-center gap-2 mt-3 flex-wrap"
       >
-        <button
+        <a
           class="button-primary d-inline-flex"
           [routerLink]="['/', lang]"
           [fragment]="'contact-us'"
@@ -119,7 +120,7 @@
         >
           <span class="material-icons-outlined">call</span>
           {{ "n4" | translate }}
-        </button>
+        </a>
         <button
           *ngIf="lang === 'en'"
           value="ro"

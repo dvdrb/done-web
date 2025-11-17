@@ -1,24 +1,25 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { CanMatchFn, Router, UrlSegment } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 
-export const langGuard: CanActivateFn = (route) => {
+export const langGuard: CanMatchFn = (route, segments: UrlSegment[]) => {
   const router = inject(Router);
   const translate = inject(TranslateService);
-  const lang = route.params['lang'];
+  const platformId = inject(PLATFORM_ID);
+  const part = segments[0]?.path;
   const supported = ['en', 'ro'];
-  if (!supported.includes(lang)) {
-    // Unknown language; redirect to root without prefix
-    router.navigate(['/']);
-    return false;
+  if (!part || !supported.includes(part)) {
+    // Redirect unknown language to root without prefix
+    return router.parseUrl('/');
   }
-  try {
-    localStorage.setItem('lang', lang);
-  } catch {}
-  translate.use(lang);
-  if (typeof document !== 'undefined') {
-    document.documentElement.setAttribute('lang', lang);
+  // Switch translation; avoid browser-only APIs during SSR
+  translate.use(part);
+  if (isPlatformBrowser(platformId)) {
+    try {
+      localStorage.setItem('lang', part);
+    } catch {}
   }
   return true;
 };
-
