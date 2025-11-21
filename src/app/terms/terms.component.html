@@ -1,16 +1,17 @@
 <div class="terms-container">
-  <p class="title m-0">Terms and Conditions</p>
-  <p class="subtitle">
-    Welcome to Done Web Design! These Terms and Conditions (“Terms”) govern your
-    use of our website, including any content, services, or features offered
-    through it. By accessing or using this website, you agree to comply with
-    these Terms. If you do not agree, please do not use the site.
-  </p>
-  <div class="terms-content">
-    <div class="terms-item my-3" *ngFor="let term of terms; last as isLast">
-      <p class="terms-item-title">{{ term.title }}</p>
-      <p class="terms-item-content">{{ term.content }}</p>
-      <div class="divider" *ngIf="!isLast"></div>
+  <div class="terms-surface">
+    <div class="terms-head">
+      <p class="eyebrow">Legal</p>
+      <p class="title m-0">{{ "n99" | translate }}</p>
+      <p class="subtitle">{{ "n100" | translate }}</p>
+    </div>
+
+    <div class="terms-content">
+      <div class="terms-item" *ngFor="let term of terms; last as isLast">
+        <p class="terms-item-title">{{ term.title }}</p>
+        <p class="terms-item-content">{{ term.content }}</p>
+        <div class="divider" *ngIf="!isLast"></div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,64 +1,90 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SeoService } from '../shared/seo.service';
 
 @Component({
   selector: 'app-terms',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './terms.component.html',
   styleUrl: './terms.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TermsComponent {
-  terms = [
-    {
-      title: '2. Our Services',
-      content:
-        'We offer professional web design and web development services, including building websites, web security, optimization, maintenance, and digital consulting. The information provided on this site is for informational purposes only. For personalized offers, please contact us directly.',
-    },
-    {
-      title: '3. Eligibility',
-      content:
-        'To work with our company, you must be at least 18 years old or be the legal representative of a legal entity. By using this site, you confirm that you meet these requirements.',
-    },
-    {
-      title: '4. Intellectual Property',
-      content:
-        'All materials on this site - including texts, images, code, logos, layouts, and visual content - are our property or are used with permission and are protected by copyright and intellectual property laws. Copying, reproducing, distributing, or reusing any content without our written consent is strictly prohibited.',
-    },
-    {
-      title: '5. Inquiries and Collaborations',
-      content:
-        'Submitting an inquiry through the contact form, email, or other channels does not automatically guarantee the acceptance of a collaboration. We reserve the right to select projects based on internal criteria, availability, and the specifics of each request.',
-    },
-    {
-      title: '6. Quotation and Payment',
-      content:
-        'Each project is subject to a customized quotation based on its complexity, duration, and client requirements. Payment terms are based on an invoice, under the terms agreed upon in the contract or commercial offer. Generally, we require an advance payment before starting the work. We reserve the right to suspend work in the event of non-payment or prolonged delay.',
-    },
-    {
-      title: '7. Limitation of Liability',
-      content:
-        "We are not responsible for any data loss, decrease in traffic, technical issues, or indirect consequences arising from the use of websites developed by us, unless caused by our gross negligence. It is the client's responsibility to ensure regular backups, data security, and the quality of the content provided.",
-    },
-    {
-      title: '8. Third-Party Links',
-      content:
-        'Our website may contain links to external sites. We have no control over the content of these sites and accept no responsibility for their policies or any damages resulting from accessing them.',
-    },
-    {
-      title: '9. Privacy and Data Protection',
-      content:
-        'Personal data collected through the contact form or direct communication is handled with the utmost confidentiality and in accordance with GDPR legislation. We do not sell or distribute this data to third parties, unless necessary for the execution of a collaboration and with your consent.',
-    },
-    {
-      title: '10. Changes to the Terms',
-      content:
-        'We may update these Terms periodically. Any changes will be published on this page, and continued use of the site implies acceptance of the updated version.',
-    },
-    {
-      title: '11. Governing Law',
-      content:
-        'These Terms are governed by Romanian law. Any disputes related to these Terms shall be settled by the competent courts of Romania.',
-    },
-  ];
+export class TermsComponent implements OnInit {
+  private destroyRef = inject(DestroyRef);
+  terms: { title: string; content: string }[] = [];
+
+  constructor(private translate: TranslateService, private seo: SeoService) {}
+
+  ngOnInit(): void {
+    this.translate
+      .stream([
+        'meta.terms.title',
+        'meta.terms.description',
+        'breadcrumbs.home',
+        'breadcrumbs.terms',
+      ])
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((t) => {
+        this.seo.setMeta({
+          title: t['meta.terms.title'],
+          description: t['meta.terms.description'],
+          path: '/terms',
+          breadcrumbs: [
+            { name: t['breadcrumbs.home'], path: '/' },
+            { name: t['breadcrumbs.terms'], path: '/terms' },
+          ],
+        });
+      });
+
+    const termsSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Terms & Conditions',
+      url: 'https://donewebdesigns.com/terms',
+    };
+    this.seo.setJsonLd('terms', termsSchema);
+
+    this.translate
+      .stream([
+        'n101',
+        'n102',
+        'n103',
+        'n104',
+        'n105',
+        'n106',
+        'n107',
+        'n108',
+        'n109',
+        'n110',
+        'n111',
+        'n112',
+        'n113',
+        'n114',
+        'n115',
+        'n116',
+        'n117',
+        'n118',
+        'n119',
+        'n120',
+      ])
+      .pipe(takeUntilDestroyed())
+      .subscribe((t) => {
+        this.terms = [
+          { title: t['n101'], content: t['n102'] },
+          { title: t['n103'], content: t['n104'] },
+          { title: t['n105'], content: t['n106'] },
+          { title: t['n107'], content: t['n108'] },
+          { title: t['n109'], content: t['n110'] },
+          { title: t['n111'], content: t['n112'] },
+          { title: t['n113'], content: t['n114'] },
+          { title: t['n115'], content: t['n116'] },
+          { title: t['n117'], content: t['n118'] },
+          { title: t['n119'], content: t['n120'] },
+        ];
+      });
+  }
 }

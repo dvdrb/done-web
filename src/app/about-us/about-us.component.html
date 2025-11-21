@@ -1,78 +1,82 @@
 <div class="about-container">
-  <div class="row d-flex m-0 justify-content-center">
-    <img
-      class="align-self-end col-auto d-md-block d-none"
-      src="/about-dwd.png"
-      alt="about-us"
-    />
-    <img
-      class="align-self-end col-auto d-md-none"
-      src="/about-us-mobile.png"
-      alt="about-us"
-    />
-    <div class="col-auto container align-self-start m-1 my-4">
-      <div class="d-flex flex-column justify-content-center mt-3">
-        <p class="heading">Get to know us</p>
-        <p class="sub-heading">
-          Our team is built on a shared love for technology, creativity, and
-          helping businesses grow. We blend fresh ideas with reliable execution
-          to create web solutions that stand out.
+  <div class="about-inner">
+    <div class="about-visual">
+      <img
+        class="about-image desktop"
+        src="/about-dwd.png"
+        alt="Team collaborating in an office"
+      />
+      <img
+        class="about-image mobile"
+        src="/about-us-mobile.png"
+        alt="Team collaborating on mobile"
+      />
+      <div class="about-note">
+        <p class="eyebrow">About DONE Software</p>
+        <p class="note-copy">
+          Delivery-focused squads, transparent workflows, and dedicated
+          expertise built around your product vision.
         </p>
       </div>
-      <span class="material-icons-outlined mx-3">verified_user</span>
-      <div class="line"></div>
     </div>
-    <div class="col-auto container align-self-end m-1 my-4">
-      <div class="d-flex flex-column justify-content-center mt-3">
-        <p class="heading">Our Mission</p>
-        <p class="sub-heading">
-          We’re here to empower brands through smart, user-focused digital
-          experiences that drive real results.
-        </p>
-      </div>
-      <span class="material-icons-outlined mx-3">bookmark</span>
-      <div class="line"></div>
-    </div>
-  </div>
-  <div class="row ps-5 pe-6 d-flex m-0 justify-content-center my-4">
-    <div class="col-auto container ms-5 align-self-start m-1">
-      <div class="d-flex flex-column justify-content-center mt-3">
-        <p class="heading">Innovation</p>
-        <p class="sub-heading">
-          We embrace creativity and forward-thinking to build solutions that are
-          not just good, but exceptional.
-        </p>
-      </div>
-      <span class="material-icons-outlined mx-3">emoji_objects</span>
-      <div class="line"></div>
-    </div>
-    <div class="col-auto container align-self-end m-1 my-4">
-      <div class="d-flex flex-column justify-content-center mt-3">
-        <p class="heading">Collaboration</p>
-        <p class="sub-heading">
-          We believe the best results come from working together — with our
-          clients, and within our team.
-        </p>
-      </div>
-      <span class="material-icons-outlined mx-3">handshake</span>
-      <div class="line"></div>
-    </div>
-    <div class="col-auto container align-self-start m-1 my-4">
-      <div class="d-flex flex-column justify-content-center mt-3">
-        <p class="heading">Our Vision</p>
-        <p class="sub-heading">
-          To be the go-to partner for businesses looking to innovate, grow, and
-          make an impact online.
-        </p>
-      </div>
-      <span class="material-icons-outlined mx-3">visibility</span>
-      <div class="line"></div>
+
+    <div class="about-grid">
+      <article class="info-card">
+        <div class="icon-chip">
+          <span class="material-icons-outlined">verified_user</span>
+        </div>
+        <div class="card-body">
+          <p class="heading">{{ "n54" | translate }}</p>
+          <p class="sub-heading">{{ "n55" | translate }}</p>
+        </div>
+      </article>
+
+      <article class="info-card">
+        <div class="icon-chip">
+          <span class="material-icons-outlined">bookmark</span>
+        </div>
+        <div class="card-body">
+          <p class="heading">{{ "n56" | translate }}</p>
+          <p class="sub-heading">{{ "n57" | translate }}</p>
+        </div>
+      </article>
+
+      <article class="info-card">
+        <div class="icon-chip">
+          <span class="material-icons-outlined">emoji_objects</span>
+        </div>
+        <div class="card-body">
+          <p class="heading">{{ "n58" | translate }}</p>
+          <p class="sub-heading">{{ "n59" | translate }}</p>
+        </div>
+      </article>
+
+      <article class="info-card">
+        <div class="icon-chip">
+          <span class="material-icons-outlined">handshake</span>
+        </div>
+        <div class="card-body">
+          <p class="heading">{{ "n60" | translate }}</p>
+          <p class="sub-heading">{{ "n61" | translate }}</p>
+        </div>
+      </article>
+
+      <article class="info-card">
+        <div class="icon-chip">
+          <span class="material-icons-outlined">visibility</span>
+        </div>
+        <div class="card-body">
+          <p class="heading">{{ "n62" | translate }}</p>
+          <p class="sub-heading">{{ "n63" | translate }}</p>
+        </div>
+      </article>
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-center">
+<div class="d-flex mt-40 justify-content-center">
   <app-challanges></app-challanges>
 </div>
-<div class="d-flex justify-content-center">
+
+<div class="d-flex mt-40 justify-content-center">
   <app-contact-us></app-contact-us>
 </div>

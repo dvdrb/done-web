@@ -7,11 +7,11 @@
         <div class="contact-info">
           <div class="contact-item">
             <span class="material-icons-outlined">language</span>
-            <span>Contact Us</span>
+            <span>{{ "n43" | translate }}</span>
           </div>
           <div class="contact-item">
             <span class="material-icons-outlined">mail</span>
-            <span>Mail us at:</span>
+            <span>{{ "n44" | translate }}</span>
             <a
               href="mailto:conludo.office@yahoo.com"
               target="_blank"
@@ -22,7 +22,7 @@
           </div>
           <div class="contact-item mb-0">
             <span class="material-icons-outlined">call</span>
-            <span>Our WhatsApp:</span>
+            <span>{{ "n45" | translate }}</span>
             <a
               href="https://wa.me/40734102096"
               target="_blank"
@@ -37,39 +37,39 @@
       <!-- Quick Navigation -->
       <div class="col-auto mt-4">
         <div class="quick-nav row">
-          <h3 class="nav-title col-auto pt-1">QUICK NAVIGATION</h3>
+          <h3 class="nav-title col-auto pt-1">{{ "n46" | translate }}</h3>
           <div class="nav-links col-auto">
             <div class="nav-row">
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'development-process'"
                 (click)="scrollToElement('development-process')"
-                >The Development Process</a
+                >{{ "n47" | translate }}</a
               >
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'industries'"
                 (click)="scrollToElement('industries')"
-                >Industries</a
+                >{{ "n48" | translate }}</a
               >
             </div>
             <div class="nav-row">
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'top-challenges'"
                 (click)="scrollToElement('top-challenges')"
-                >Top Challenges</a
+                >{{ "n49" | translate }}</a
               >
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'contact-us'"
                 (click)="scrollToElement('contact-us')"
-                >Contact Us</a
+                >{{ "n50" | translate }}</a
               >
             </div>
             <div class="nav-row">
-              <a [routerLink]="['/cookies']">Cookie Policy</a>
-              <a [routerLink]="['/terms']">Terms & Conditions</a>
+              <a [routerLink]="['/', lang, 'cookies']">{{ "n51" | translate }}</a>
+              <a [routerLink]="['/', lang, 'terms']">{{ "n52" | translate }}</a>
             </div>
           </div>
         </div>
@@ -86,14 +86,24 @@
       <div class="col-auto">
         <div class="country-info">
           <div class="flags">
-            <div class="flag-item">
+            <button
+              class="flag-item"
+              [ariaSelected]="lang === 'ro'"
+              value="ro"
+              (click)="changeLang('ro')"
+            >
               <img src="/romania.png" alt="Romanian Flag" />
-              <span class="flag-text">Romania</span>
-            </div>
-            <div class="flag-item">
+              <span class="flag-text">Romanian</span>
+            </button>
+            <button
+              class="flag-item"
+              [ariaSelected]="lang === 'en'"
+              value="en"
+              (click)="changeLang('en')"
+            >
               <img src="/europe.png" alt="European Union Flag" />
-              <span class="flag-text">European Union</span>
-            </div>
+              <span class="flag-text">English</span>
+            </button>
           </div>
         </div>
       </div>
@@ -105,39 +115,39 @@
     <div class="row justify-content-between d-flex">
       <div class="col-12 mt-4">
         <div class="quick-nav mb-5">
-          <h3 class="nav-title col-auto pt-1">QUICK NAVIGATION</h3>
+          <h3 class="nav-title col-auto pt-1">{{ "n46" | translate }}</h3>
           <div class="nav-links col-auto">
             <div class="nav-row">
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'development-process'"
                 (click)="scrollToElement('development-process')"
-                >The Development Process</a
+                >{{ "n47" | translate }}</a
               >
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'industries'"
                 (click)="scrollToElement('industries')"
-                >Industries</a
+                >{{ "n48" | translate }}</a
               >
             </div>
             <div class="nav-row">
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'top-challenges'"
                 (click)="scrollToElement('top-challenges')"
-                >Top Challenges</a
+                >{{ "n49" | translate }}</a
               >
               <a
-                [routerLink]="['/']"
+                [routerLink]="['/', lang]"
                 [fragment]="'contact-us'"
                 (click)="scrollToElement('contact-us')"
-                >Contact Us</a
+                >{{ "n50" | translate }}</a
               >
             </div>
             <div class="nav-row">
-              <a [routerLink]="['/cookies']">Cookies Policy</a>
-              <a [routerLink]="['/terms']">Terms & Conditions</a>
+              <a [routerLink]="['/', lang, 'cookies']">{{ "n51" | translate }}</a>
+              <a [routerLink]="['/', lang, 'terms']">{{ "n52" | translate }}</a>
             </div>
           </div>
         </div>
@@ -148,11 +158,11 @@
         <div class="contact-info">
           <div class="contact-item">
             <span class="material-icons-outlined">language</span>
-            <span>Contact Us</span>
+            <span>{{ "n43" | translate }}</span>
           </div>
           <div class="contact-item">
             <span class="material-icons-outlined">mail</span>
-            <span>Mail us at:</span>
+            <span>{{ "n44" | translate }}</span>
             <a
               href="mailto:conludo.office@yahoo.com"
               target="_blank"
@@ -163,7 +173,7 @@
           </div>
           <div class="contact-item mb-0">
             <span class="material-icons-outlined">call</span>
-            <span>Our WhatsApp:</span>
+            <span>{{ "n45" | translate }}</span>
             <a
               href="https://wa.me/40734102096"
               target="_blank"
@@ -188,14 +198,24 @@
       <div class="col-12">
         <div class="country-info">
           <div class="flags">
-            <div class="flag-item">
+            <button
+              [ariaSelected]="lang === 'ro'"
+              value="ro"
+              (click)="changeLang('ro')"
+              class="flag-item"
+            >
               <img src="/romania.png" alt="Romanian Flag" />
-              <span class="flag-text">Romania</span>
-            </div>
-            <div class="flag-item">
+              <span class="flag-text">Romanian</span>
+            </button>
+            <button
+              [ariaSelected]="lang === 'en'"
+              value="en"
+              (click)="changeLang('en')"
+              class="flag-item"
+            >
               <img src="/europe.png" alt="European Union Flag" />
-              <span class="flag-text">European Union</span>
-            </div>
+              <span class="flag-text">English</span>
+            </button>
           </div>
         </div>
       </div>

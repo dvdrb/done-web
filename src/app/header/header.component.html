@@ -1,57 +1,81 @@
 <div class="header d-none d-lg-flex">
-  <div class="logo">
-    <img
-      src="/dwd-logo.png"
-      width="210"
-      height="50"
-      alt="logo"
-      [routerLink]="['/']"
-      class="cursor-pointer"
-    />
-  </div>
-  <div class="menu">
-    <a [routerLink]="['/about-us']" class="menu-item" routerLinkActive="active">
-      About Us
+  <div class="contain">
+    <a class="logo" [routerLink]="['/', lang]">
+      <img
+        src="/dwd-logo.png"
+        width="180"
+        height="44"
+        alt="Done Web Design logo"
+        class="cursor-pointer"
+      />
     </a>
+    <div class="menu">
+      <a
+        [routerLink]="['/', lang, 'about-us']"
+        class="menu-item"
+        routerLinkActive="active"
+        >{{ "n5" | translate }}</a
+      >
+      <a
+        class="menu-item"
+        [routerLink]="['/', lang]"
+        [fragment]="'development-process'"
+        (click)="scrollToElement('development-process')"
+      >
+        {{ "n6" | translate }}
+      </a>
+      <a class="menu-item" [routerLink]="['/', lang, 'faqs']">{{ "n7" | translate }}</a>
+      <div class="flag-switcher">
+        <button
+          *ngIf="lang === 'en'"
+          value="ro"
+          (click)="changeLang('ro')"
+          class="flag-item"
+        >
+          <img class="img" src="/romania.png" alt="Romanian Flag" />
+          <span class="flag-text">Romanian</span>
+        </button>
+        <button
+          *ngIf="lang === 'ro'"
+          value="ro"
+          (click)="changeLang('en')"
+          class="flag-item"
+        >
+          <img class="img" src="/europe.png" alt="Romanian Flag" />
+          <span class="flag-text">English</span>
+        </button>
+      </div>
+    </div>
     <a
-      class="menu-item"
-      [routerLink]="['/']"
-      [fragment]="'development-process'"
-      (click)="scrollToElement('development-process')"
+      class="button-primary"
+      [routerLink]="['/', lang]"
+      [fragment]="'contact-us'"
+      (click)="scrollToElement('contact-us')"
     >
-      Process
+      <span class="material-icons-outlined">call</span>
+      {{ "n4" | translate }}
     </a>
-    <a class="menu-item" [routerLink]="['/faqs']"> FAQs </a>
   </div>
-
-  <button
-    class="button-primary"
-    [routerLink]="['/']"
-    [fragment]="'contact-us'"
-    (click)="scrollToElement('contact-us')"
-  >
-    <span class="material-icons-outlined">call</span>
-    Book a call
-  </button>
 </div>
 
-<div class="d-flex d-flex d-lg-none header">
+<div class="header-mobile d-flex d-lg-none">
   <div class="logo">
-    <img
-      src="/dwd-logo.png"
-      width="210"
-      height="50"
-      alt="logo"
-      [routerLink]="['/']"
-      class="cursor-pointer"
-    />
+    <a [routerLink]="['/', lang]">
+      <img
+        src="/dwd-logo.png"
+        width="180"
+        height="44"
+        alt="Done Web Design logo"
+        class="cursor-pointer"
+      />
+    </a>
   </div>
-  <a class="btn btn-lg btn-outline-primary" (click)="openEnd(content)">
+  <button type="button" class="btn btn-lg btn-outline-primary" (click)="openEnd(content)">
     <span class="material-icons-outlined">menu</span>
-  </a>
+  </button>
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
-      <h4 class="offcanvas-title">Quick Links</h4>
+      <h4 class="offcanvas-title">{{ "n46" | translate }}</h4>
       <button
         type="button"
         class="btn-close"
@@ -60,34 +84,62 @@
       ></button>
     </div>
     <div class="offcanvas-body">
-      <div class="menu flex-column d-flex gap-2 align-items-center">
+      <div class="menu flex-column d-flex gap-3 align-items-start">
         <a
-          [routerLink]="['/about-us']"
+          (click)="routerAndClose('/about-us', offcanvas)"
+          [routerLink]="['/', lang, 'about-us']"
           class="menu-item"
           routerLinkActive="active"
         >
-          About Us
+          {{ "n5" | translate }}
         </a>
         <a
           class="menu-item"
-          [routerLink]="['/']"
+          [routerLink]="['/', lang]"
           [fragment]="'development-process'"
-          (click)="scrollToElement('development-process')"
+          (click)="navigateAndClose('development-process', offcanvas)"
         >
-          Process
+          {{ "n6" | translate }}
         </a>
-        <a class="menu-item" [routerLink]="['/faqs']"> FAQs </a>
+        <a
+          class="menu-item"
+          (click)="routerAndClose('/faqs', offcanvas)"
+          [routerLink]="['/', lang, 'faqs']"
+        >
+          {{ "n7" | translate }}
+        </a>
       </div>
-
-      <button
-        class="button-primary"
-        [routerLink]="['/']"
-        [fragment]="'contact-us'"
-        (click)="scrollToElement('contact-us')"
+      <div
+        class="d-flex justify-content-between align-items-center gap-2 mt-3 flex-wrap"
       >
-        <span class="material-icons-outlined">call</span>
-        Book a call
-      </button>
+        <a
+          class="button-primary d-inline-flex"
+          [routerLink]="['/', lang]"
+          [fragment]="'contact-us'"
+          (click)="navigateAndClose('contact-us', offcanvas)"
+        >
+          <span class="material-icons-outlined">call</span>
+          {{ "n4" | translate }}
+        </a>
+        <button
+          *ngIf="lang === 'en'"
+          value="ro"
+          (click)="changeLang('ro')"
+          class="flag-item d-inline-flex"
+        >
+          <img class="img" src="/romania.png" alt="Romanian Flag" />
+          <span class="flag-text">Romanian</span>
+        </button>
+        <button
+          *ngIf="lang === 'ro'"
+          value="ro"
+          (click)="changeLang('en')"
+          class="flag-item d-inline-flex"
+        >
+          <img class="img" src="/europe.png" alt="Romanian Flag" />
+          <span class="flag-text">English</span>
+        </button>
+      </div>
     </div>
   </ng-template>
 </div>

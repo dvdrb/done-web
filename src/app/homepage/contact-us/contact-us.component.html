@@ -1,64 +1,51 @@
-<div class="contact-container row">
-  <div class="col-md-6 col-12">
-    <div class="contact-form gap-3 d-flex flex-column align-items-center">
-      <h2 class="heading">Contact Us!</h2>
-      <p class="sub-heading">
-        Fill out the form below and we'll get back to you once we've processed
-        your request.
-      </p>
+<div class="contact-shell">
+  <div class="contact-copy">
+    <p class="eyebrow">{{ "n34" | translate }}</p>
+    <h2>{{ "n35" | translate }}</h2>
+    <p class="lede">
+      Tell us about your product, roadmap, and timelines. We'll respond within one business day.
+    </p>
+    <div class="badges">
+      <span class="pill">Product strategy</span>
+      <span class="pill">UI/UX leadership</span>
+      <span class="pill">Dedicated squads</span>
+    </div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-form">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="px-3">
-        <div class="row mb-4">
+        <div class="row mb-3">
           <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
-            <input placeholder="*Name" matInput formControlName="name" />
+            <input [placeholder]="'n36' | translate" matInput formControlName="name" />
           </mat-form-field>
           <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
-            <input placeholder="*Company" matInput formControlName="company" />
+            <input [placeholder]="'n37' | translate" matInput formControlName="company" />
           </mat-form-field>
         </div>
-        <div class="row mb-5">
+        <div class="row mb-4">
           <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
-            <input
-              placeholder="*Corporate Email"
-              matInput
-              formControlName="email"
-              type="email"
-            />
+            <input [placeholder]="'n38' | translate" matInput formControlName="email" type="email" />
           </mat-form-field>
           <mat-form-field class="col-md-6 col-12 input-field" appearance="fill">
-            <input
-              placeholder="*Phone"
-              matInput
-              formControlName="phone"
-              type="tel"
-            />
+            <input [placeholder]="'n39' | translate" matInput formControlName="phone" type="tel" />
           </mat-form-field>
         </div>
         <div class="form-actions">
-          <button
-            class="btn-primary"
-            type="submit"
-            [class.disabled]="!contactForm.valid"
-            [disabled]="!contactForm.valid"
-          >
-            Send
+          <button class="btn-primary" type="submit" [class.disabled]="!contactForm.valid" [disabled]="!contactForm.valid">
+            {{ "n40" | translate }}
           </button>
           <span class="privacy-notice">
-            By clicking Send, you agree to our
-            <a routerLink="/privacy-policy" class="privacy-link"
-              >Privacy Policy</a
-            >
+            {{ "n41" | translate }}
+            <a routerLink="/privacy-policy" class="privacy-link">{{ "n42" | translate }}</a>
           </span>
         </div>
       </form>
     </div>
-  </div>
-  <div class="col-md-6 col-12 office-container">
     <div class="office-card">
-      <h2 class="office-heading">Our Office</h2>
+      <h3 class="office-heading">{{ "n121" | translate }}</h3>
       <div class="country-info">
         <img src="/romania.png" alt="Romania Flag" class="flag" />
-        <span class="country">ROMANIA</span>
-
+        <span class="country">Romania</span>
         <div class="address-info">
           Suite 5, Plaza 256,<br />
           Sector 2, Strada Maria Rosetti 36,<br />

@@ -1,96 +1,57 @@
-<div>
-  <div class="home-container d-none d-lg-block">
-    <div class="logo">
-      <img src="/dwd-logo-2.png" alt="DWD Logo" />
-    </div>
-    <div class="hero-text">
-      <p class="title">The path to your success,</p>
-      <p class="with-us title">With us.</p>
-      <div class="d-flex justify-content-between">
-        <p class="description">
-          Done Web Design -
-          <span>
-            Romanian software development company crafting fast, modern siteuri
-            Romania, bespoke platforms, and growth-ready digital products.
-          </span>
-        </p>
-        <button
-          class="book-call-btn d-flex justify-content-center align-items-center"
+<div class="page-shell">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="title">
+        {{ "n1" | translate }}
+        <span class="accent">{{ "n2" | translate }}</span>
+      </h1>
+      <p class="description">
+        Done Web Design — <span>{{ "n3" | translate }}</span>
+      </p>
+      <div class="hero-actions">
+        <a
+          class="book-call-btn"
           [routerLink]="['/']"
           [fragment]="'contact-us'"
           (click)="scrollToElement('contact-us')"
         >
-          <span class="material-icons-outlined"> call </span>
-          Book a call
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="home-container d-flex d-lg-none">
-    <div class="hero-text">
-      <p class="title">The path to your success,</p>
-      <p class="with-us title">With us.</p>
-      <div class="">
-        <p class="description">
-          Done Web Design -
-          <span>
-            Romanian software development partner for high-converting siteuri
-            Romania, SaaS products, and enterprise-grade integrations.
-          </span>
-        </p>
-        <button
-          class="book-call-btn d-flex justify-content-center align-items-center"
+          <span class="material-icons-outlined">call</span>
+          {{ "n4" | translate }}
+        </a>
+        <a
+          class="ghost-btn"
           [routerLink]="['/']"
-          [fragment]="'contact-us'"
-          (click)="scrollToElement('contact-us')"
+          [fragment]="'development-process'"
+          (click)="scrollToElement('development-process')"
         >
-          <span class="material-icons-outlined"> call </span>
-          Book a call
-        </button>
+          See how we work
+          <span class="material-icons-outlined">arrow_forward</span>
+        </a>
+      </div>
+      <div class="hero-pills">
+        <span class="pill">Enterprise builds</span>
+        <span class="pill">Design-first delivery</span>
+        <span class="pill">Nearshore partnership</span>
       </div>
     </div>
+    <div class="hero-card">
+      <div class="stat">98%<small>delivery satisfaction</small></div>
+      <div class="stat">12+<small>active partnerships</small></div>
+      <div class="stat">24h<small>kickoff readiness</small></div>
+    </div>
   </div>
-  <section
-    class="seo-keywords"
-    aria-label="Romanian software development services and keywords"
-  >
-    <h2>Software Development Romania & Custom Siteuri</h2>
-    <p>
-      We help venture-backed companies and ambitious Romanian brands launch
-      performant web platforms, ecommerce siteuri Romania, and scalable SaaS
-      products. Our Bucharest-based engineers combine UX, cloud architecture,
-      and product strategy so your software development in Romania competes on a
-      global stage.
-    </p>
-    <ul class="seo-keywords__list">
-      <li>
-        <strong>Software development Romania:</strong> product discovery,
-        full-stack engineering, and DevOps support.
-      </li>
-      <li>
-        <strong>Siteuri Romania:</strong> multilingual corporate sites, B2B
-        lead-generation pages, and blazing fast landing pages.
-      </li>
-      <li>
-        <strong>Custom Romanian software company services:</strong> API-first
-        builds, headless ecommerce, and nearshore delivery pods.
-      </li>
-      <li>
-        <strong>Keywords we rank for:</strong> companie software Romania,
-        outsourcing software development Romania, agentie dezvoltare siteuri.
-      </li>
-    </ul>
-  </section>
+
   <section id="development-process">
-    <app-development />
+    <app-development class="section" />
   </section>
   <section id="industries">
-    <app-solutions />
+    <app-solutions class="section" />
   </section>
   <section id="top-challenges">
-    <app-challanges />
+    <app-challanges class="section" />
   </section>
   <section id="contact-us">
-    <app-contact-us />
+    <app-contact-us class="section" />
   </section>
 </div>
