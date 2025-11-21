@@ -1,8 +1,7 @@
-<footer class="footer d-lg-block d-none">
-  <div class="container">
-    <div class="row justify-content-between d-flex">
-      <!-- Company Info -->
-      <div class="col-md-4">
+<footer class="footer hidden lg:block">
+  <div class="mx-auto max-w-6xl space-y-10">
+    <div class="flex justify-between gap-10">
+      <div class="max-w-sm">
         <p class="company-name">Done Web Design</p>
         <div class="contact-info">
           <div class="contact-item">
@@ -34,189 +33,174 @@
         </div>
       </div>
 
-      <!-- Quick Navigation -->
-      <div class="col-auto mt-4">
-        <div class="quick-nav row">
-          <h3 class="nav-title col-auto pt-1">{{ "n46" | translate }}</h3>
-          <div class="nav-links col-auto">
-            <div class="nav-row">
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'development-process'"
-                (click)="scrollToElement('development-process')"
-                >{{ "n47" | translate }}</a
-              >
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'industries'"
-                (click)="scrollToElement('industries')"
-                >{{ "n48" | translate }}</a
-              >
-            </div>
-            <div class="nav-row">
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'top-challenges'"
-                (click)="scrollToElement('top-challenges')"
-                >{{ "n49" | translate }}</a
-              >
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'contact-us'"
-                (click)="scrollToElement('contact-us')"
-                >{{ "n50" | translate }}</a
-              >
-            </div>
-            <div class="nav-row">
-              <a [routerLink]="['/', lang, 'cookies']">{{ "n51" | translate }}</a>
-              <a [routerLink]="['/', lang, 'terms']">{{ "n52" | translate }}</a>
-            </div>
+      <div class="quick-nav flex flex-col gap-4">
+        <h3 class="nav-title">{{ "n46" | translate }}</h3>
+        <div class="nav-links">
+          <div class="nav-row">
+            <a
+              [routerLink]="['/', lang]"
+              [fragment]="'development-process'"
+              (click)="scrollToElement('development-process')"
+              >{{ "n47" | translate }}</a
+            >
+            <a
+              [routerLink]="['/', lang]"
+              [fragment]="'industries'"
+              (click)="scrollToElement('industries')"
+              >{{ "n48" | translate }}</a
+            >
+          </div>
+          <div class="nav-row">
+            <a
+              [routerLink]="['/', lang]"
+              [fragment]="'top-challenges'"
+              (click)="scrollToElement('top-challenges')"
+              >{{ "n49" | translate }}</a
+            >
+            <a
+              [routerLink]="['/', lang]"
+              [fragment]="'contact-us'"
+              (click)="scrollToElement('contact-us')"
+              >{{ "n50" | translate }}</a
+            >
+          </div>
+          <div class="nav-row">
+            <a [routerLink]="['/', lang, 'cookies']">{{ "n51" | translate }}</a>
+            <a [routerLink]="['/', lang, 'terms']">{{ "n52" | translate }}</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="row down-footer justify-content-between d-flex">
-      <div class="col-auto">
-        <img
-          src="/dwd-logo-3.png"
-          alt="Done Web Design Logo"
-          class="logo-footer"
-        />
-      </div>
-      <div class="col-auto">
-        <div class="country-info">
-          <div class="flags">
-            <button
-              class="flag-item"
-              [ariaSelected]="lang === 'ro'"
-              value="ro"
-              (click)="changeLang('ro')"
-            >
-              <img src="/romania.png" alt="Romanian Flag" />
-              <span class="flag-text">Romanian</span>
-            </button>
-            <button
-              class="flag-item"
-              [ariaSelected]="lang === 'en'"
-              value="en"
-              (click)="changeLang('en')"
-            >
-              <img src="/europe.png" alt="European Union Flag" />
-              <span class="flag-text">English</span>
-            </button>
-          </div>
+    <div class="down-footer flex items-center justify-between">
+      <img
+        src="/dwd-logo-3.png"
+        alt="Done Web Design Logo"
+        class="logo-footer"
+      />
+      <div class="country-info">
+        <div class="flags">
+          <button
+            class="flag-item"
+            [ariaSelected]="lang === 'ro'"
+            value="ro"
+            (click)="changeLang('ro')"
+          >
+            <img src="/romania.png" alt="Romanian Flag" />
+            <span class="flag-text">Romanian</span>
+          </button>
+          <button
+            class="flag-item"
+            [ariaSelected]="lang === 'en'"
+            value="en"
+            (click)="changeLang('en')"
+          >
+            <img src="/europe.png" alt="European Union Flag" />
+            <span class="flag-text">English</span>
+          </button>
         </div>
       </div>
     </div>
   </div>
 </footer>
-<footer class="footer d-lg-none">
-  <div class="container">
-    <div class="row justify-content-between d-flex">
-      <div class="col-12 mt-4">
-        <div class="quick-nav mb-5">
-          <h3 class="nav-title col-auto pt-1">{{ "n46" | translate }}</h3>
-          <div class="nav-links col-auto">
-            <div class="nav-row">
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'development-process'"
-                (click)="scrollToElement('development-process')"
-                >{{ "n47" | translate }}</a
-              >
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'industries'"
-                (click)="scrollToElement('industries')"
-                >{{ "n48" | translate }}</a
-              >
-            </div>
-            <div class="nav-row">
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'top-challenges'"
-                (click)="scrollToElement('top-challenges')"
-                >{{ "n49" | translate }}</a
-              >
-              <a
-                [routerLink]="['/', lang]"
-                [fragment]="'contact-us'"
-                (click)="scrollToElement('contact-us')"
-                >{{ "n50" | translate }}</a
-              >
-            </div>
-            <div class="nav-row">
-              <a [routerLink]="['/', lang, 'cookies']">{{ "n51" | translate }}</a>
-              <a [routerLink]="['/', lang, 'terms']">{{ "n52" | translate }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Company Info -->
-      <div class="col-12 down-footer mb-5">
-        <p class="company-name">Done Web Design</p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="material-icons-outlined">language</span>
-            <span>{{ "n43" | translate }}</span>
-          </div>
-          <div class="contact-item">
-            <span class="material-icons-outlined">mail</span>
-            <span>{{ "n44" | translate }}</span>
-            <a
-              href="mailto:conludo.office@yahoo.com"
-              target="_blank"
-              class="contact-nr"
-            >
-              conludo.office&#64;yahoo.com
-            </a>
-          </div>
-          <div class="contact-item mb-0">
-            <span class="material-icons-outlined">call</span>
-            <span>{{ "n45" | translate }}</span>
-            <a
-              href="https://wa.me/40734102096"
-              target="_blank"
-              class="contact-nr"
-            >
-              +40734102096</a
-            >
-          </div>
-        </div>
-      </div>
 
-      <!-- Quick Navigation -->
-    </div>
-    <div class="row down-footer justify-content-between d-flex">
-      <div class="col-12 d-flex justify-content-center">
-        <img
-          src="/dwd-logo-3.png"
-          alt="Done Web Design Logo"
-          class="logo-footer"
-        />
+<footer class="footer lg:hidden">
+  <div class="mx-auto max-w-6xl space-y-10">
+    <div class="quick-nav mb-5">
+      <h3 class="nav-title">{{ "n46" | translate }}</h3>
+      <div class="nav-links">
+        <div class="nav-row">
+          <a
+            [routerLink]="['/', lang]"
+            [fragment]="'development-process'"
+            (click)="scrollToElement('development-process')"
+            >{{ "n47" | translate }}</a
+          >
+          <a
+            [routerLink]="['/', lang]"
+            [fragment]="'industries'"
+            (click)="scrollToElement('industries')"
+            >{{ "n48" | translate }}</a
+          >
+        </div>
+        <div class="nav-row">
+          <a
+            [routerLink]="['/', lang]"
+            [fragment]="'top-challenges'"
+            (click)="scrollToElement('top-challenges')"
+            >{{ "n49" | translate }}</a
+          >
+          <a
+            [routerLink]="['/', lang]"
+            [fragment]="'contact-us'"
+            (click)="scrollToElement('contact-us')"
+            >{{ "n50" | translate }}</a
+          >
+        </div>
+        <div class="nav-row">
+          <a [routerLink]="['/', lang, 'cookies']">{{ "n51" | translate }}</a>
+          <a [routerLink]="['/', lang, 'terms']">{{ "n52" | translate }}</a>
+        </div>
       </div>
-      <div class="col-12">
-        <div class="country-info">
-          <div class="flags">
-            <button
-              [ariaSelected]="lang === 'ro'"
-              value="ro"
-              (click)="changeLang('ro')"
-              class="flag-item"
-            >
-              <img src="/romania.png" alt="Romanian Flag" />
-              <span class="flag-text">Romanian</span>
-            </button>
-            <button
-              [ariaSelected]="lang === 'en'"
-              value="en"
-              (click)="changeLang('en')"
-              class="flag-item"
-            >
-              <img src="/europe.png" alt="European Union Flag" />
-              <span class="flag-text">English</span>
-            </button>
-          </div>
+    </div>
+
+    <div class="space-y-6">
+      <p class="company-name">Done Web Design</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="material-icons-outlined">language</span>
+          <span>{{ "n43" | translate }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons-outlined">mail</span>
+          <span>{{ "n44" | translate }}</span>
+          <a
+            href="mailto:conludo.office@yahoo.com"
+            target="_blank"
+            class="contact-nr"
+          >
+            conludo.office&#64;yahoo.com
+          </a>
+        </div>
+        <div class="contact-item mb-0">
+          <span class="material-icons-outlined">call</span>
+          <span>{{ "n45" | translate }}</span>
+          <a
+            href="https://wa.me/40734102096"
+            target="_blank"
+            class="contact-nr"
+          >
+            +40734102096</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="down-footer flex flex-col items-center gap-6">
+      <img
+        src="/dwd-logo-3.png"
+        alt="Done Web Design Logo"
+        class="logo-footer"
+      />
+      <div class="country-info justify-center">
+        <div class="flags">
+          <button
+            [ariaSelected]="lang === 'ro'"
+            value="ro"
+            (click)="changeLang('ro')"
+            class="flag-item"
+          >
+            <img src="/romania.png" alt="Romanian Flag" />
+            <span class="flag-text">Romanian</span>
+          </button>
+          <button
+            [ariaSelected]="lang === 'en'"
+            value="en"
+            (click)="changeLang('en')"
+            class="flag-item"
+          >
+            <img src="/europe.png" alt="European Union Flag" />
+            <span class="flag-text">English</span>
+          </button>
         </div>
       </div>
     </div>
