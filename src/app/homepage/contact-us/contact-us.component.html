@@ -3,12 +3,12 @@
     <p class="eyebrow">{{ "n34" | translate }}</p>
     <h2>{{ "n35" | translate }}</h2>
     <p class="lede">
-      Tell us about your product, roadmap, and timelines. We'll respond within one business day.
+      {{ 'n161' | translate }}
     </p>
     <div class="badges">
-      <span class="pill">Product strategy</span>
-      <span class="pill">UI/UX leadership</span>
-      <span class="pill">Dedicated squads</span>
+      <span class="pill">{{ 'n162' | translate }}</span>
+      <span class="pill">{{ 'n163' | translate }}</span>
+      <span class="pill">{{ 'n164' | translate }}</span>
     </div>
   </div>
   <div class="contact-grid">
@@ -45,13 +45,8 @@
       <h3 class="office-heading">{{ "n121" | translate }}</h3>
       <div class="country-info">
         <img src="/romania.png" alt="Romania Flag" class="flag" />
-        <span class="country">Romania</span>
-        <div class="address-info">
-          Suite 5, Plaza 256,<br />
-          Sector 2, Strada Maria Rosetti 36,<br />
-          Bucharest, Romania<br />
-          <a href="tel:+40734102096">+40734102096</a>
-        </div>
+        <span class="country">{{ 'n165' | translate }}</span>
+        <div class="address-info" [innerHTML]="'n166' | translate"></div>
       </div>
     </div>
   </div>
